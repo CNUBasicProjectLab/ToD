@@ -7,16 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		861A4B7E29E06732002C740C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861A4B7D29E06732002C740C /* MainView.swift */; };
 		86DE110E29DFB52E00BA5643 /* ToDApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DE110D29DFB52E00BA5643 /* ToDApp.swift */; };
-		86DE111029DFB52E00BA5643 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DE110F29DFB52E00BA5643 /* ContentView.swift */; };
+		86DE111029DFB52E00BA5643 /* WebContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DE110F29DFB52E00BA5643 /* WebContentView.swift */; };
 		86DE111229DFB52F00BA5643 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86DE111129DFB52F00BA5643 /* Assets.xcassets */; };
 		86DE111529DFB52F00BA5643 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86DE111429DFB52F00BA5643 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		861A4B7A29E06589002C740C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		861A4B7D29E06732002C740C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		86DE110A29DFB52E00BA5643 /* ToD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86DE110D29DFB52E00BA5643 /* ToDApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDApp.swift; sourceTree = "<group>"; };
-		86DE110F29DFB52E00BA5643 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		86DE110F29DFB52E00BA5643 /* WebContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebContentView.swift; sourceTree = "<group>"; };
 		86DE111129DFB52F00BA5643 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		86DE111429DFB52F00BA5643 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -51,8 +54,10 @@
 		86DE110C29DFB52E00BA5643 /* ToD */ = {
 			isa = PBXGroup;
 			children = (
+				861A4B7A29E06589002C740C /* Info.plist */,
 				86DE110D29DFB52E00BA5643 /* ToDApp.swift */,
-				86DE110F29DFB52E00BA5643 /* ContentView.swift */,
+				861A4B7D29E06732002C740C /* MainView.swift */,
+				86DE110F29DFB52E00BA5643 /* WebContentView.swift */,
 				86DE111129DFB52F00BA5643 /* Assets.xcassets */,
 				86DE111329DFB52F00BA5643 /* Preview Content */,
 			);
@@ -137,7 +142,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86DE111029DFB52E00BA5643 /* ContentView.swift in Sources */,
+				861A4B7E29E06732002C740C /* MainView.swift in Sources */,
+				86DE111029DFB52E00BA5643 /* WebContentView.swift in Sources */,
 				86DE110E29DFB52E00BA5643 /* ToDApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,6 +275,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ToD/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ToD/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -297,6 +305,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ToD/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ToD/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
