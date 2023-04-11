@@ -26,6 +26,20 @@ struct MainView: View {
     }
 }
 
+//extension MainView {
+//    var launchScreenView: some View {
+//        ZStack(alignment: .center) {
+//                    
+//                    LinearGradient(gradient: Gradient(colors: [Color("PrimaryColor"), Color("SubPrimaryColor")]),
+//                                    startPoint: .top, endPoint: .bottom)
+//                    .edgesIgnoringSafeArea(.all)
+//                    
+//                    Image("LaunchImage")
+//                    
+//                }
+//    }
+//}
+
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
