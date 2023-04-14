@@ -13,6 +13,7 @@ struct IntroView: View {
         
         NavigationView{
             VStack{
+//                Spacer().frame(height: .zero)
                 Image("logowithname")
                     .resizable()
                     .scaledToFit()
@@ -38,7 +39,7 @@ struct IntroView: View {
                     SelectAnswerView()
                         .toolbarRole(.editor)
                 }label:{
-                    Text("네 같이 찾아봐요!")
+                    Text("투디 생성하기")
                         .font(.headline)
                         .frame(width: 283,height: 60)
                         .foregroundColor(.white)
@@ -49,7 +50,9 @@ struct IntroView: View {
                 }
                 
             }
+            
         }
+        
         
         
     }
