@@ -14,8 +14,6 @@ struct WebContentView: View {
             Color.black
                 .ignoresSafeArea()
             VStack{
-            
-                              
                 WebView(url: URL(string: "https://whataboutthis.netlify.app/")!)
             }
         }
