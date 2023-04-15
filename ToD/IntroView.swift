@@ -17,9 +17,12 @@ struct IntroView: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 103 , height: 50)
-                Spacer()
+//                Spacer()
                 
-                Image("IntroNotCharacter")
+//                Image("IntroNotCharacter")
+                
+                LottieView(filename: "intro")
+                              .frame( height: 250)
                 
                 Text("지금부터 개발자까지")
                     .font(.system(size : 20, weight: .black))
