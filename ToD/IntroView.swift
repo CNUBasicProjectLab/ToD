@@ -13,7 +13,6 @@ struct IntroView: View {
         
         NavigationView{
             VStack{
-//                Spacer().frame(height: .zero)
                 Image("logowithname")
                     .resizable()
                     .scaledToFit()
@@ -26,14 +25,12 @@ struct IntroView: View {
                     .font(.system(size : 20, weight: .black))
                     .padding(.bottom)
                 Text("투디는 여러분이 개발자의 꿈을 함께 키워 나가는 서비스입니다. 어떤 개발자가 되고 싶은지 고민이신 분들도 도와드립니다.")
+                    .frame(width: 260)
                     .font(.system(size : 15, weight: .semibold))
                     .foregroundColor(.gray)
-                
                     .padding(.horizontal , 30)
                 
                 Spacer()
-                
-                
                 
                 NavigationLink{
                     SelectAnswerView()
@@ -46,8 +43,8 @@ struct IntroView: View {
                         .background(.blue)
                         .cornerRadius(15)
                         .shadow(color: .gray, radius: 5, x: 0, y: 5)
-                    
                 }
+                Spacer()
                 
             }
             
