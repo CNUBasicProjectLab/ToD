@@ -45,7 +45,7 @@ struct IntroView: View {
                         .foregroundColor(.white)
                         .background(.blue)
                         .cornerRadius(15)
-                        .shadow(color: .gray, radius: 5, x: 0, y: 5)
+                        .shadow(color: .gray, radius: 2, x: 0, y: 3)
                 }
                 Spacer()
                 

@@ -35,7 +35,7 @@ struct SelectAnswerView: View {
                     
                     NavigationLink{
                         CreateCharacterView()
-//                            .navigationBarBackButtonHidden(true)
+                            .navigationBarBackButtonHidden(true)
                     }label:{
                         VStack{
                             Text("괜찮아요")
@@ -53,7 +53,7 @@ struct SelectAnswerView: View {
                     NavigationLink{
                         WebContentView()
                         
-//                            .navigationBarBackButtonHidden(true)
+                            .navigationBarBackButtonHidden(true)
                     }label:{
                         Text("도움 받기")
                             .font(.headline)
