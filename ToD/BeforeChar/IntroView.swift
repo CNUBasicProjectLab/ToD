@@ -11,7 +11,6 @@ struct IntroView: View {
     
     var body: some View {
         
-        NavigationView{
             VStack{
                 Image("logowithname")
                     .resizable()
@@ -51,7 +50,7 @@ struct IntroView: View {
                 
             }
             
-        }
+        
         
         
         
