@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CreateCharacterView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("캐릭터 생성화면")
     }
 }
 
