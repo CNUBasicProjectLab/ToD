@@ -64,7 +64,7 @@ struct SelectAnswerView: View {
                 NavigationLink{
                     WebContentView()
                     
-                        .navigationBarBackButtonHidden(true)
+//                        .navigationBarBackButtonHidden(true)
                 }label:{
                     Text("도움 받기")
                         .font(.headline)
