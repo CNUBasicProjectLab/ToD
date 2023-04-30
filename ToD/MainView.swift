@@ -7,11 +7,17 @@
 
 import SwiftUI
 
+
+
 struct MainView: View {
     @AppStorage("isChar") var isChar: Bool = false
+    
+    @EnvironmentObject var loginState : ObservableLogin
+    
+    
     var body: some View {
         NavigationView{
-            if isChar{
+            if loginState.login{
                 ToDoView()
             }else{
                 IntroView()
@@ -25,6 +31,6 @@ struct MainView: View {
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
+        MainView().environmentObject(ObservableLogin())
     }
 }
