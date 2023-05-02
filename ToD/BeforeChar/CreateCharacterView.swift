@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CreateCharacterView: View {
+    @AppStorage("isChar") var isChar: Bool = false
     var body: some View {
         VStack{
             Spacer()
@@ -68,15 +69,22 @@ struct CreateCharacterView: View {
                     .padding(.horizontal)
                 
             }
-            Text("생성하기")
-                .font(.headline)
-                .frame(maxWidth: 200)
-                .foregroundColor(.white)
-                .padding()
-                .background(.blue)
+            Button {
+                isChar = true
+            } label: {
+                Text("생성하기")
+                    .font(.headline)
+                    .frame(maxWidth: 200)
+                    .foregroundColor(.white)
+                    .padding()
+            }.background(.blue)
                 .cornerRadius(15)
                 .shadow(color: .gray, radius: 2, x: 0, y: 3)
                 .padding(.vertical)
+            
+            
+            
+            
         }
     }
 }

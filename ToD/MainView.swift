@@ -10,7 +10,7 @@ import SwiftUI
 struct MainView: View {
     @AppStorage("isChar") var isChar: Bool = false
     var body: some View {
-        NavigationStack{
+        NavigationView{
             if isChar{
                 ToDoView()
             }else{
