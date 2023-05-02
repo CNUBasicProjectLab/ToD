@@ -23,8 +23,8 @@ struct SelectAnswerView: View {
                 .padding(.bottom)
             Text("원하는 개발자가 생각이 안난다면 투디가 도와드릴게요")
             //                    .frame(width: 260)
-                .font(.system(size : 15, weight: .semibold))
                 .foregroundColor(.gray)
+                .font(.system(size : 15, weight: .semibold))
                 .padding(.horizontal , 30)
             Text("투디와 함께 알아볼까요?")
                 .font(.system(size : 15, weight: .semibold))
@@ -38,7 +38,7 @@ struct SelectAnswerView: View {
 //                        .navigationBarBackButtonHidden(true)
                 }label:{
                     VStack{
-                        Text("괜찮아요")
+                        Text("생성하기")
                             .font(.headline)
                             .frame(maxWidth: .infinity)
                             .foregroundColor(.blue)
