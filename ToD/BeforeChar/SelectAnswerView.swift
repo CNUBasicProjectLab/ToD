@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SelectAnswerView: View {
     @AppStorage("isChar") var isChar: Bool = false
+    
+    @EnvironmentObject var loginState : ObservableLogin
     var body: some View {
         VStack{
             Image("logowithname")
@@ -33,7 +35,8 @@ struct SelectAnswerView: View {
             Spacer()
             HStack{
                 Button{
-                    isChar = true
+//                    isChar = true
+                    loginState.login = true
                 }label:{
                     VStack{
                         Text("괜찮아요")
@@ -75,7 +78,7 @@ struct SelectAnswerView: View {
                     .cornerRadius(15)
                     .shadow(color: .gray, radius: 2, x: 0, y: 3)
                     .padding(.vertical)
-            }.padding()
+            }.padding().environmentObject(ObservableLogin())
             
             
             

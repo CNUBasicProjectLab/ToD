@@ -9,14 +9,14 @@ import SwiftUI
 
 @main
 struct ToDApp: App {
-    
+    @EnvironmentObject var loginState : ObservableLogin
     init() {
             Thread.sleep(forTimeInterval: 2)
         }
     
     var body: some Scene {
         WindowGroup {
-            MainView()
+            MainView().environmentObject(ObservableLogin())
         }
     }
 }

@@ -16,6 +16,7 @@
 		863E48EB29E46E9800488280 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863E48EA29E46E9800488280 /* IntroView.swift */; };
 		863E48EF29E4759B00488280 /* SelectAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863E48EE29E4759B00488280 /* SelectAnswerView.swift */; };
 		863E48F129E479C100488280 /* CreateCharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863E48F029E479C100488280 /* CreateCharacterView.swift */; };
+		86B6175B29FE97AD00D97105 /* LoginState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B6175A29FE97AD00D97105 /* LoginState.swift */; };
 		86DE110E29DFB52E00BA5643 /* ToDApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DE110D29DFB52E00BA5643 /* ToDApp.swift */; };
 		86DE111029DFB52E00BA5643 /* WebContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DE110F29DFB52E00BA5643 /* WebContentView.swift */; };
 		86DE111229DFB52F00BA5643 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86DE111129DFB52F00BA5643 /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 		863E48EA29E46E9800488280 /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
 		863E48EE29E4759B00488280 /* SelectAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAnswerView.swift; sourceTree = "<group>"; };
 		863E48F029E479C100488280 /* CreateCharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCharacterView.swift; sourceTree = "<group>"; };
+		86B6175A29FE97AD00D97105 /* LoginState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginState.swift; sourceTree = "<group>"; };
 		86DE110A29DFB52E00BA5643 /* ToD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86DE110D29DFB52E00BA5643 /* ToDApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDApp.swift; sourceTree = "<group>"; };
 		86DE110F29DFB52E00BA5643 /* WebContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebContentView.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				861A4B7A29E06589002C740C /* Info.plist */,
 				86DE111129DFB52F00BA5643 /* Assets.xcassets */,
 				86DE111329DFB52F00BA5643 /* Preview Content */,
+				86B6175A29FE97AD00D97105 /* LoginState.swift */,
 			);
 			path = ToD;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 			files = (
 				861A4B7E29E06732002C740C /* MainView.swift in Sources */,
 				863E48EB29E46E9800488280 /* IntroView.swift in Sources */,
+				86B6175B29FE97AD00D97105 /* LoginState.swift in Sources */,
 				861FE8B129EDC10D0093F1FA /* ToDoView.swift in Sources */,
 				86DE111029DFB52E00BA5643 /* WebContentView.swift in Sources */,
 				863E48EF29E4759B00488280 /* SelectAnswerView.swift in Sources */,
