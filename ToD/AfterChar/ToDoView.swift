@@ -10,6 +10,7 @@ import SwiftUI
 struct ToDoView: View {
     @AppStorage("isChar") var isChar: Bool = true
     var body: some View {
+        
         VStack{
             Text("ToDoView")
             Button {
@@ -17,7 +18,9 @@ struct ToDoView: View {
             } label: {
                 Text("다시 false로")
             }
-
+            
+            
+            
         }
     }
 }

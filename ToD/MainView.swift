@@ -12,7 +12,7 @@ struct MainView: View {
     var body: some View {
         NavigationView{
             if isChar{
-                ToDoView()
+                AfterCharTabControllerView()
             }else{
                 IntroView()
             }
