@@ -10,18 +10,22 @@ import SwiftUI
 struct ToDoView: View {
     @AppStorage("isChar") var isChar: Bool = true
     var body: some View {
-        
-        VStack{
+        NavigationView
+        {VStack{
+            
             Text("ToDoView")
             Button {
                 isChar = false
             } label: {
                 Text("다시 false로")
             }
-            
-            
-            
-        }
+        }.toolbar {
+            Button {
+                print("tap!")
+            } label: {
+                Label("Profile", systemImage: "square.and.pencil")
+            }
+        }}
     }
 }
 
