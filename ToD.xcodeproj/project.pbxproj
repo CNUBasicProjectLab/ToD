@@ -13,6 +13,8 @@
 		86063C3829EB0FCC00725AAD /* intro.json in Resources */ = {isa = PBXBuildFile; fileRef = 86063C3729EB0FCC00725AAD /* intro.json */; };
 		861A4B7E29E06732002C740C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861A4B7D29E06732002C740C /* MainView.swift */; };
 		861FE8B129EDC10D0093F1FA /* ToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861FE8B029EDC10D0093F1FA /* ToDoView.swift */; };
+		862077F62A0773F6003A3E52 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862077F52A0773F6003A3E52 /* BoardView.swift */; };
+		862077F82A077507003A3E52 /* AfterCharTabControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862077F72A077507003A3E52 /* AfterCharTabControllerView.swift */; };
 		863E48EB29E46E9800488280 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863E48EA29E46E9800488280 /* IntroView.swift */; };
 		863E48EF29E4759B00488280 /* SelectAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863E48EE29E4759B00488280 /* SelectAnswerView.swift */; };
 		863E48F129E479C100488280 /* CreateCharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863E48F029E479C100488280 /* CreateCharacterView.swift */; };
@@ -30,6 +32,8 @@
 		861A4B7A29E06589002C740C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		861A4B7D29E06732002C740C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		861FE8B029EDC10D0093F1FA /* ToDoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoView.swift; sourceTree = "<group>"; };
+		862077F52A0773F6003A3E52 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
+		862077F72A077507003A3E52 /* AfterCharTabControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterCharTabControllerView.swift; sourceTree = "<group>"; };
 		863E48EA29E46E9800488280 /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
 		863E48EE29E4759B00488280 /* SelectAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAnswerView.swift; sourceTree = "<group>"; };
 		863E48F029E479C100488280 /* CreateCharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCharacterView.swift; sourceTree = "<group>"; };
@@ -78,6 +82,8 @@
 			isa = PBXGroup;
 			children = (
 				861FE8B029EDC10D0093F1FA /* ToDoView.swift */,
+				862077F52A0773F6003A3E52 /* BoardView.swift */,
+				862077F72A077507003A3E52 /* AfterCharTabControllerView.swift */,
 			);
 			path = AfterChar;
 			sourceTree = "<group>";
@@ -201,12 +207,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				862077F82A077507003A3E52 /* AfterCharTabControllerView.swift in Sources */,
 				861A4B7E29E06732002C740C /* MainView.swift in Sources */,
 				863E48EB29E46E9800488280 /* IntroView.swift in Sources */,
 				861FE8B129EDC10D0093F1FA /* ToDoView.swift in Sources */,
 				86DE111029DFB52E00BA5643 /* WebContentView.swift in Sources */,
 				863E48EF29E4759B00488280 /* SelectAnswerView.swift in Sources */,
 				863E48F129E479C100488280 /* CreateCharacterView.swift in Sources */,
+				862077F62A0773F6003A3E52 /* BoardView.swift in Sources */,
 				86DE110E29DFB52E00BA5643 /* ToDApp.swift in Sources */,
 				86063C3629EB085700725AAD /* LottieView.swift in Sources */,
 			);
