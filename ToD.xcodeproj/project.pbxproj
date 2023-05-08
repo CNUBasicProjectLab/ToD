@@ -110,7 +110,6 @@
 		86DE110C29DFB52E00BA5643 /* ToD */ = {
 			isa = PBXGroup;
 			children = (
-				BA969B292A07F43E00DBD597 /* New Group */,
 				861FE8AE29EDC0610093F1FA /* BeforeChar */,
 				861FE8AF29EDC0F10093F1FA /* AfterChar */,
 				86063C3229EB06EC00725AAD /* Gifs */,
@@ -130,13 +129,6 @@
 				86DE111429DFB52F00BA5643 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		BA969B292A07F43E00DBD597 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
