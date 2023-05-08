@@ -10,6 +10,7 @@ import SwiftUI
 struct ToDoView: View {
     @AppStorage("isChar") var isChar: Bool = true
     
+
     var body: some View {
         NavigationView {
             VStack {
@@ -19,6 +20,7 @@ struct ToDoView: View {
                 } label: {
                     Text("다시 false로")
                 }
+
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
@@ -43,6 +45,6 @@ struct ToDoView: View {
 
 struct ToDoView_Previews: PreviewProvider {
     static var previews: some View {
-        ToDoView()
+        ToDoView().environmentObject(ObservableLogin())
     }
 }
