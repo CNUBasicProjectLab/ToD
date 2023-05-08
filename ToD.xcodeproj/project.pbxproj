@@ -23,6 +23,7 @@
 		86DE111229DFB52F00BA5643 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86DE111129DFB52F00BA5643 /* Assets.xcassets */; };
 		86DE111529DFB52F00BA5643 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86DE111429DFB52F00BA5643 /* Preview Assets.xcassets */; };
 		BA48AFE629E55CED009A2820 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA48AFE529E55CED009A2820 /* Launch Screen.storyboard */; };
+		BA969B2B2A07F6D200DBD597 /* CreateToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA969B2A2A07F6D200DBD597 /* CreateToDoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		86DE111129DFB52F00BA5643 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		86DE111429DFB52F00BA5643 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BA48AFE529E55CED009A2820 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		BA969B2A2A07F6D200DBD597 /* CreateToDoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateToDoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				861FE8B029EDC10D0093F1FA /* ToDoView.swift */,
 				862077F52A0773F6003A3E52 /* BoardView.swift */,
 				862077F72A077507003A3E52 /* AfterCharTabControllerView.swift */,
+				BA969B2A2A07F6D200DBD597 /* CreateToDoView.swift */,
 			);
 			path = AfterChar;
 			sourceTree = "<group>";
@@ -107,6 +110,7 @@
 		86DE110C29DFB52E00BA5643 /* ToD */ = {
 			isa = PBXGroup;
 			children = (
+				BA969B292A07F43E00DBD597 /* New Group */,
 				861FE8AE29EDC0610093F1FA /* BeforeChar */,
 				861FE8AF29EDC0F10093F1FA /* AfterChar */,
 				86063C3229EB06EC00725AAD /* Gifs */,
@@ -126,6 +130,13 @@
 				86DE111429DFB52F00BA5643 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BA969B292A07F43E00DBD597 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +228,7 @@
 				862077F62A0773F6003A3E52 /* BoardView.swift in Sources */,
 				86DE110E29DFB52E00BA5643 /* ToDApp.swift in Sources */,
 				86063C3629EB085700725AAD /* LottieView.swift in Sources */,
+				BA969B2B2A07F6D200DBD597 /* CreateToDoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
