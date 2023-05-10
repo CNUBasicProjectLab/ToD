@@ -9,57 +9,108 @@ import SwiftUI
 
 struct CreateCharacterView: View {
     @AppStorage("isChar") var isChar: Bool = false
+    @State var index: Int = -1
+    @State var n : CGFloat = 50
+    @State var fontSize : CGFloat = 17
     var body: some View {
+        
         VStack{
             Spacer()
             VStack(){
                 Text("어떤 직종을 희망하시나요?")
                     .font(.system(size : 20, weight: .semibold))
-            }.frame(maxWidth: .infinity , alignment: .leading).padding(.leading)
+            }
+            .frame(maxWidth: .infinity , alignment: .leading)
+            .padding(.leading)
             //            상단 아이콘
             HStack(alignment: .center, spacing: 10){
                 VStack{
-                    Image("back").resizable().frame(width: 50,height: 50)
+                    Image("back")
+                        .resizable()
+                        .frame(width: index != 0 ? 50 : 70,height: index != 0 ? 50 : 70)
                     Text("서버/\n백엔드")
-                }.frame(width: 80)
+//                        .font(.system(size: index != 0 ? 17 : 23))
+//                        .fontWeight(index != 0 ? .none : .bold)
+                }
+                .frame(width: 80)
+                .onTapGesture {
+                    index = 0
+                }
+                .animation(.easeIn, value: index)
                 VStack{
-                    Image("front").resizable().frame(width: 50,height: 50)
-                    Text("프론트엔드\n")
-                }.frame(width: 80)
+                    Image("front")
+                        .resizable()
+                        .frame(width: index != 1 ? 50 : 70,height: index != 1 ? 50 : 70)
+                    Text("프론트엔드")
+//                        .font(.system(size: index != 1 ? 17 : 23))
+//                        .fontWeight(index != 1 ? .none : .bold)
+                }
+                .frame(width: 80)
+                .onTapGesture {
+                    index = 1
+                }
+                .animation(.easeIn, value: index)
                 VStack{
-                    Image("mobile2").resizable().frame(width: 50,height: 50)
+                    Image("mobile2")
+                        .resizable()
+                        .frame(width: index != 2 ? 50 : 70,height: index != 2 ? 50 : 70)
                     Text("모바일\n")
-                }.frame(width: 80)
+//                        .font(.system(size: index != 2 ? 17 : 23))
+//                        .fontWeight(index != 2 ? .none : .bold)
+                }
+                .frame(width: 80)
+                .onTapGesture {
+                    index = 2
+                }
+                .animation(.easeIn, value: index)
                 VStack{
-                    Image("swsolution").resizable().frame(width: 50,height: 50)
+                    Image("swsolution")
+                        .resizable()
+                        .frame(width: 50,height: 50)
                     Text("SW/\n솔루션")
-                }.frame(width: 80)
-            }.padding(.bottom)
+                }
+                .frame(width: 80)
+            }
+            .padding(.bottom)
             //            하단 아이콘
             HStack(spacing: 10){
                 VStack{
-                    Image("security").resizable().frame(width: 50,height: 50)
+                    Image("security")
+                        .resizable()
+                        .frame(width: 50,height: 50)
                     Text("보안\n")
-                }.frame(width: 80)
+                }
+                .frame(width: 80)
                 
                 VStack{
-                    Image("bug").resizable().frame(width: 50,height: 50)
+                    Image("bug")
+                        .resizable()
+                        .frame(width: 50,height: 50)
                     Text("QA엔지니어")
-                }.frame(width: 80)
+                }
+                .frame(width: 80)
                 VStack{
-                    Image("embedded").resizable().frame(width: 50,height: 50)
+                    Image("embedded")
+                        .resizable()
+                        .frame(width: 50,height: 50)
                     Text("임베디드\n")
-                }.frame(width: 80)
+                }
+                .frame(width: 80)
                 VStack{
-                    Image("ai").resizable().frame(width: 50,height: 50)
+                    Image("ai")
+                        .resizable()
+                        .frame(width: 50,height: 50)
                     Text("인공지능/\n머신러닝")
-                }.frame(width: 80)
+                }
+                .frame(width: 80)
                 
             }
             
-            RoundedRectangle(cornerRadius: 15 , style: .continuous).fill(Color.gray)
+            RoundedRectangle(cornerRadius: 15 , style: .continuous)
+                .fill(Color.gray)
                 .padding()
-                .overlay(Text("투디 미리보기").foregroundColor(Color.white))
+                .overlay(Text("투디 미리보기")
+                .foregroundColor(Color.white))
             VStack(alignment :.leading){
                 Text("⚠️ 주의")
                     .font(.system(size : 20, weight: .semibold))
