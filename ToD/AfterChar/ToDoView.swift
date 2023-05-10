@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-//testing
 
 struct ToDoView: View {
     @AppStorage("isChar") var isChar: Bool = true
@@ -47,6 +46,6 @@ struct ToDoView: View {
 
 struct ToDoView_Previews: PreviewProvider {
     static var previews: some View {
-        ToDoView().environmentObject(ObservableLogin())
+        ToDoView()
     }
 }

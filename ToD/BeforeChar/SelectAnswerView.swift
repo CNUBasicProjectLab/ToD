@@ -9,8 +9,6 @@ import SwiftUI
 
 struct SelectAnswerView: View {
     @AppStorage("isChar") var isChar: Bool = false
-    
-    @EnvironmentObject var loginState : ObservableLogin
     var body: some View {
         VStack{
             Image("logowithname")
@@ -34,12 +32,10 @@ struct SelectAnswerView: View {
                 .padding(.horizontal , 30)
             Spacer()
             HStack{
-
                 NavigationLink{
                     CreateCharacterView()
                         .toolbarRole(.editor)
 //                        .navigationBarBackButtonHidden(true)
-
                 }label:{
                     VStack{
                         Text("생성하기")
@@ -68,7 +64,7 @@ struct SelectAnswerView: View {
                     .cornerRadius(15)
                     .shadow(color: .gray, radius: 2, x: 0, y: 3)
                     .padding(.vertical)
-            }.padding().environmentObject(ObservableLogin())
+            }.padding()
             
             
             
