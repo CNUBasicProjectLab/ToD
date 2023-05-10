@@ -11,10 +11,10 @@ import WebKit
 struct WebContentView: View {
     var body: some View {
         ZStack{
-            Color.black
+            Color.white
                 .ignoresSafeArea()
             VStack{
-                WebView(url: URL(string: "https://todacc.netlify.app/")!)
+                WebView(url: URL(string: "https://todacc.netlify.app")!)
             }
         }
     }
