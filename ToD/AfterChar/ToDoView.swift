@@ -135,9 +135,9 @@ struct ToDoView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     HStack{
-                        Image("Logo")
+                        Image("LogoBgx")
                             .resizable()
-                            .frame(width: 48,height: 48)
+                            .frame(width: 32,height: 32)
                         Text("투디")
                             .font(.system(size : 24, weight: .semibold))
                     }
