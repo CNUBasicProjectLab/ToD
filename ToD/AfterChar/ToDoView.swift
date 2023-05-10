@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ToDoView: View {
     @AppStorage("isChar") var isChar: Bool = true
-    
+    @State private var showModal: Bool = false
 
     var body: some View {
         NavigationView {
@@ -29,9 +29,12 @@ struct ToDoView: View {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-                        print("tap!")
+                        self.showModal = true
                     } label: {
                         Label("Profile", systemImage: "square.and.pencil")
+                    }
+                    .sheet(isPresented: $showModal) {
+                        CreateToDoView()
                     }
                     
                 }
