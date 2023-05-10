@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-//testing
 
 struct ToDoView: View {
     @AppStorage("isChar") var isChar: Bool = true
     
+
     var body: some View {
         NavigationView {
             VStack {
@@ -21,6 +21,7 @@ struct ToDoView: View {
                 } label: {
                     Text("다시 false로")
                 }
+
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {

@@ -7,12 +7,18 @@
 
 import SwiftUI
 
+
+
 struct MainView: View {
     @AppStorage("isChar") var isChar: Bool = false
+    
+    
     var body: some View {
         NavigationView{
+
             if isChar{
                 AfterCharTabControllerView()
+
             }else{
                 IntroView()
             }
