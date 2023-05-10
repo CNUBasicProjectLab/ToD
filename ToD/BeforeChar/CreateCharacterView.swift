@@ -51,9 +51,9 @@ struct CreateCharacterView: View {
                 }
                 .animation(.easeIn, value: index)
                 VStack{
-                    Image("mobile2")
-                        .resizable()
-                        .frame(width: index != 2 ? 50 : 70,height: index != 2 ? 50 : 70)
+
+                    Image("mobile").resizable().frame(width: 50,height: 50)
+
                     Text("모바일\n")
 //                        .font(.system(size: index != 2 ? 17 : 23))
 //                        .fontWeight(index != 2 ? .none : .bold)
