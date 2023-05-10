@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CreateToDoView: View {
     var category = ["Daily", "Week", "Month", "Year"]
+    @Environment(\.dismiss) private var dissmiss
+    @State private var showModal: Bool = false
     @State var selectedCategory = ""
     @State var title = ""
     @State var content = ""
@@ -16,7 +18,7 @@ struct CreateToDoView: View {
         
         VStack {
             HStack {
-                Text("투두 카테고리")
+                Text("투디")
                     .font(.title2)
                     .bold()
                     .padding()
@@ -34,7 +36,7 @@ struct CreateToDoView: View {
             Divider()
             
             VStack {
-                TextField("투두 타이틀", text: $title)
+                TextField("투디 타이틀", text: $title)
                     .textFieldStyle(.roundedBorder)
                 TextEditor(text: $content)
                     .overlay(
@@ -42,13 +44,19 @@ struct CreateToDoView: View {
                             .stroke(Color.black.opacity(0.07), lineWidth: 1)
                     )
             }
+            .frame(height: 500)
             .padding()
-            Spacer()
             Button {
-                
+                dissmiss()
             } label: {
                 Text("완료")
+                    .frame(width: 100, height: 50)
+                    .foregroundColor(.white)
+                    .background(.blue)
+                    .cornerRadius(7)
             }
+            
+            
         }
         
     }
