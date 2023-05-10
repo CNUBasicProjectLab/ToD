@@ -27,7 +27,7 @@ struct CreateCharacterView: View {
                     Text("프론트엔드\n")
                 }.frame(width: 80)
                 VStack{
-                    Image("mobile2").resizable().frame(width: 50,height: 50)
+                    Image("mobile").resizable().frame(width: 50,height: 50)
                     Text("모바일\n")
                 }.frame(width: 80)
                 VStack{
