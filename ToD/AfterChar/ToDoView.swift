@@ -46,11 +46,6 @@ struct ToDoView: View {
                         }
                         .padding()
                         
-                        
-                        
-                        
-                        
-                        
                         HStack{
                             Image("Week")
                             VStack(alignment : .leading){
@@ -62,13 +57,6 @@ struct ToDoView: View {
                             
                         }
                         .padding()
-                        
-                        
-                        
-                        
-                        
-                        
-                        
                         
                         HStack{
                             Image("Month")
@@ -82,14 +70,6 @@ struct ToDoView: View {
                         }
                         .padding()
                         
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
                         HStack{
                             Image("Year")
                             VStack(alignment : .leading){
@@ -101,13 +81,6 @@ struct ToDoView: View {
                             
                         }
                         .padding()
-                        
-                        
-                        
-                        
-                        
-                        
-                        
                         
                         HStack{
                             Image("Mission")
