@@ -10,8 +10,6 @@ import SwiftUI
 struct CreateCharacterView: View {
     @AppStorage("isChar") var isChar: Bool = false
     @State var index: Int = -1
-    @State var n : CGFloat = 50
-    @State var fontSize : CGFloat = 17
     var body: some View {
         
         VStack{
@@ -21,7 +19,7 @@ struct CreateCharacterView: View {
                     .font(.system(size : 20, weight: .semibold))
             }
             .frame(maxWidth: .infinity , alignment: .leading)
-            .padding(.leading)
+            .padding()
             //            상단 아이콘
             HStack(alignment: .center, spacing: 10){
                 VStack{
@@ -29,8 +27,6 @@ struct CreateCharacterView: View {
                         .resizable()
                         .frame(width: index != 0 ? 50 : 70,height: index != 0 ? 50 : 70)
                     Text("서버/\n백엔드")
-//                        .font(.system(size: index != 0 ? 17 : 23))
-//                        .fontWeight(index != 0 ? .none : .bold)
                 }
                 .frame(width: 80)
                 .onTapGesture {
@@ -42,8 +38,6 @@ struct CreateCharacterView: View {
                         .resizable()
                         .frame(width: index != 1 ? 50 : 70,height: index != 1 ? 50 : 70)
                     Text("프론트엔드")
-//                        .font(.system(size: index != 1 ? 17 : 23))
-//                        .fontWeight(index != 1 ? .none : .bold)
                 }
                 .frame(width: 80)
                 .onTapGesture {
@@ -52,11 +46,11 @@ struct CreateCharacterView: View {
                 .animation(.easeIn, value: index)
                 VStack{
 
-                    Image("mobile").resizable().frame(width: 50,height: 50)
+                    Image("mobile")
+                        .resizable()
+                        .frame(width: index != 2 ? 50 : 70,height: index != 2 ? 50 : 70)
 
                     Text("모바일\n")
-//                        .font(.system(size: index != 2 ? 17 : 23))
-//                        .fontWeight(index != 2 ? .none : .bold)
                 }
                 .frame(width: 80)
                 .onTapGesture {
@@ -66,10 +60,15 @@ struct CreateCharacterView: View {
                 VStack{
                     Image("swsolution")
                         .resizable()
-                        .frame(width: 50,height: 50)
+                        .frame(width: index != 3 ? 50 : 70,height: index != 3 ? 50 : 70)
+                    
                     Text("SW/\n솔루션")
                 }
                 .frame(width: 80)
+                .onTapGesture {
+                    index = 3
+                }
+                .animation(.easeIn, value: index)
             }
             .padding(.bottom)
             //            하단 아이콘
@@ -77,34 +76,53 @@ struct CreateCharacterView: View {
                 VStack{
                     Image("security")
                         .resizable()
-                        .frame(width: 50,height: 50)
+                        .frame(width: index != 4 ? 50 : 70,height: index != 4 ? 50 : 70)
+
                     Text("보안\n")
                 }
                 .frame(width: 80)
-                
+                .onTapGesture {
+                    index = 4
+                }
+                .animation(.easeIn, value: index)
                 VStack{
                     Image("bug")
                         .resizable()
-                        .frame(width: 50,height: 50)
+                        .frame(width: index != 5 ? 50 : 70,height: index != 5 ? 50 : 70)
+
                     Text("QA엔지니어")
                 }
                 .frame(width: 80)
+                .onTapGesture {
+                    index = 5
+                }
+                .animation(.easeIn, value: index)
                 VStack{
                     Image("embedded")
                         .resizable()
-                        .frame(width: 50,height: 50)
+                        .frame(width: index != 6 ? 50 : 70,height: index != 6 ? 50 : 70)
+
                     Text("임베디드\n")
                 }
                 .frame(width: 80)
+                .onTapGesture {
+                    index = 6
+                }
+                .animation(.easeIn, value: index)
                 VStack{
                     Image("ai")
                         .resizable()
-                        .frame(width: 50,height: 50)
+                        .frame(width: index != 7 ? 50 : 70,height: index != 7 ? 50 : 70)
+
                     Text("인공지능/\n머신러닝")
                 }
                 .frame(width: 80)
-                
+                .onTapGesture {
+                    index = 7
+                }
+                .animation(.easeIn, value: index)
             }
+//            .padding()
             
             RoundedRectangle(cornerRadius: 15 , style: .continuous)
                 .fill(Color.gray)
@@ -132,10 +150,6 @@ struct CreateCharacterView: View {
                 .cornerRadius(15)
                 .shadow(color: .gray, radius: 2, x: 0, y: 3)
                 .padding(.vertical)
-            
-            
-            
-            
         }
     }
 }
