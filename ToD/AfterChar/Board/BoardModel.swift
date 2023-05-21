@@ -33,7 +33,7 @@ enum JobItem: String, CaseIterable, Codable {
 
 }
 
-struct BoardModel: Codable {
+struct BoardModel: Codable, Hashable {
     var keyDate: Date
     
     func keyDateString() -> String {
