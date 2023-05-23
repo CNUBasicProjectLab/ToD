@@ -7,7 +7,6 @@
 import SwiftUI
 
 struct BoardView: View {
-    var jobList : [String] = ["서버 / 백엔드", "프론트앤드", "모바일", "SW / 솔루션", "보안", "QA 엔지니어", "임베디드", "인공지능 / 머신러닝"]
     var boardDataManager: BoardDataManager = BoardDataManager.shared
     @State var job: JobItem = .all
     @State var boardList: [BoardModel] = []

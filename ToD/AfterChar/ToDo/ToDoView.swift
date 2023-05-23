@@ -9,10 +9,11 @@ import SwiftUI
 
 
 struct ToDoView: View {
+    var dataManager: ToDoDataManager = ToDoDataManager.shared
+    
     @AppStorage("isChar") var isChar: Bool = true
-
     @State private var showModal: Bool = false
-
+    @State var toDo: toDoItem = .tod
 
     var body: some View {
         NavigationView {
@@ -27,12 +28,17 @@ struct ToDoView: View {
                     Text("투디 이미지 미리보기")
                 }
                 Divider()
-                Picker(selection: /*@START_MENU_TOKEN@*/.constant(1)/*@END_MENU_TOKEN@*/, label: /*@START_MENU_TOKEN@*/Text("Picker")/*@END_MENU_TOKEN@*/) {
-                    /*@START_MENU_TOKEN@*/Text("1").tag(1)/*@END_MENU_TOKEN@*/
-                    /*@START_MENU_TOKEN@*/Text("2").tag(2)/*@END_MENU_TOKEN@*/
-                }.pickerStyle(.segmented)
-                    .padding()
-                
+                    Picker("투디 퀘스트", selection: $toDo) {
+                        ForEach(toDoItem.allCases, id: \.self) { todItem in
+                            Text(todItem.displayToDoItemName)
+                                .tag(todItem)
+                        }
+                    }
+                    .onChange(of: toDo) { newValue in
+                        
+                    }
+                    .pickerStyle(.segmented)
+                    
                 Spacer()
                     VStack
                     {
