@@ -12,7 +12,7 @@ struct CreateBoardView: View {
     @State private var content: String = ""
     @State private var job: JobItem = .frontEnd
     @State private var isTouched: Bool = false
-    @State private var isComplete: Bool = false
+    @State private var isNotComplete: Bool = false
     
     @Environment(\.presentationMode) var presentation
     var dataManager: BoardDataManager = BoardDataManager.shared
@@ -35,10 +35,13 @@ struct CreateBoardView: View {
     var PickerArea: some View {
         VStack {
             HStack {
-                Text("직군을 입력해주세요")
+                
+                Text("직군을 선택해주세요")
                     .fontWeight(.semibold)
                     .font(.callout)
+                
                 Spacer()
+                
                 Picker("직군 선택 픽커", selection: $job) {
                     ForEach(JobItem.allCases, id: \.self) { jobItem in
                         Text(jobItem.displayJobName)
@@ -63,13 +66,13 @@ struct CreateBoardView: View {
                     .padding()
                     .overlay {
                         RoundedRectangle(cornerRadius: 10)
-                            .stroke().opacity(0.5)
+                            .stroke(Color.black.opacity(0.5), lineWidth: 0.5)
                     }
                 ZStack {
                     TextEditor(text: $content)
                         .overlay(
-                            RoundedRectangle(cornerRadius: 7)
-                                .stroke(Color.black.opacity(0.5), lineWidth: 1)
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color.black.opacity(0.5), lineWidth: 0.5)
                         )
                         .keyboardType(.default)
                         .onTapGesture {
@@ -89,8 +92,11 @@ struct CreateBoardView: View {
     var BottomArea: some View {
         VStack {
             Button {
-                let result = addData()
-                self.presentation.wrappedValue.dismiss()
+                isNotComplete = isNotCompleteContent()
+                if !isNotComplete {
+                    let _ = addData()
+                    self.presentation.wrappedValue.dismiss()
+                }
             } label: {
                 Text("완료")
                     .frame(width: 70)
@@ -100,6 +106,19 @@ struct CreateBoardView: View {
                     .cornerRadius(10)
             }
             .padding()
+            .alert(Text("오류"), isPresented: $isNotComplete) {
+                Button("확인") {}
+            } message: {
+                Text("제목과 내용을 모두 작성해주세요.")
+            }
+        }
+    }
+    
+    func isNotCompleteContent() -> Bool {
+        if (title == "") || (content == "") {
+            return true
+        } else {
+            return false
         }
     }
 }

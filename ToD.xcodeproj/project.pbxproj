@@ -97,11 +97,7 @@
 		861FE8AF29EDC0F10093F1FA /* AfterChar */ = {
 			isa = PBXGroup;
 			children = (
-				861FE8B029EDC10D0093F1FA /* ToDoView.swift */,
-				BA7980602A18ECC3009DF732 /* ToDoModel.swift */,
-				BA79805E2A18EBAA009DF732 /* ToDoDataManager.swift */,
-				862077F72A077507003A3E52 /* AfterCharTabControllerView.swift */,
-				BA969B2A2A07F6D200DBD597 /* CreateToDoView.swift */,
+				BAF4CEA12A1CB27100F0E367 /* ToDo */,
 				BA7980642A18F88B009DF732 /* Board */,
 			);
 			path = AfterChar;
@@ -158,6 +154,18 @@
 				BAF6A61F2A15B4F0004F4E14 /* BoardDataManager.swift */,
 			);
 			path = Board;
+			sourceTree = "<group>";
+		};
+		BAF4CEA12A1CB27100F0E367 /* ToDo */ = {
+			isa = PBXGroup;
+			children = (
+				861FE8B029EDC10D0093F1FA /* ToDoView.swift */,
+				BA7980602A18ECC3009DF732 /* ToDoModel.swift */,
+				BA79805E2A18EBAA009DF732 /* ToDoDataManager.swift */,
+				862077F72A077507003A3E52 /* AfterCharTabControllerView.swift */,
+				BA969B2A2A07F6D200DBD597 /* CreateToDoView.swift */,
+			);
+			path = ToDo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
