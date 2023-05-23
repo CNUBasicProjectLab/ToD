@@ -9,6 +9,7 @@ import Foundation
 
 enum JobItem: String, CaseIterable, Codable {
 //    var jobList : [String] = ["서버 / 백엔드", "프론트앤드", "모바일", "SW / 솔루션", "보안", "QA 엔지니어", "임베디드", "인공지능 / 머신러닝"]
+    case all
     case server
     case frontEnd
     case moblie
@@ -20,6 +21,7 @@ enum JobItem: String, CaseIterable, Codable {
     
     var displayJobName: String {
         switch self {
+        case .all: return "전체"
         case .server: return "서버 / 백엔드"
         case .frontEnd: return "프론트앤드"
         case .moblie: return "모바일"
