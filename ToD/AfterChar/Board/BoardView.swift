@@ -14,9 +14,6 @@ struct BoardView: View {
     @State private var isRefreshing = false
     
     var body: some View {
-        
-        
-        
         NavigationStack {
             ZStack {
                 VStack {
@@ -32,7 +29,7 @@ struct BoardView: View {
                         .onChange(of: job) { newValue in
                             
                         }
-                    .pickerStyle(.menu)
+                        .pickerStyle(.menu)
                     
                     }
                     .padding()

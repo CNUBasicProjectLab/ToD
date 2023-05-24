@@ -1,20 +1,20 @@
 //
-//  BoardDetailView.swift
+//  ToDoDetailView.swift
 //  ToD
 //
-//  Created by 문영균 on 2023/05/18.
+//  Created by 문영균 on 2023/05/24.
 //
 
 import SwiftUI
 
-struct BoardDetailView: View {
-    @State var board: BoardModel
+struct ToDoDetailView: View {
+    @State var todo: ToDoModel
     @State var contents: String = ""
     var body: some View {
         VStack (alignment: .leading) {
             VStack (alignment: .leading, spacing: 16) {
                 HStack {
-                    Text(board.title)
+                    Text(todo.todo)
                         .font(.largeTitle)
                         .fontWeight(.medium)
                         .foregroundColor(.black)
@@ -28,7 +28,7 @@ struct BoardDetailView: View {
             }
             VStack(alignment: .leading, spacing: 16) {
                 HStack {
-                    Text(board.contents)
+                    Text(todo.todoDetail)
                         .padding()
                     Spacer()
                 }
@@ -44,8 +44,8 @@ struct BoardDetailView: View {
     }
 }
 
-struct BoardDetailView_Previews: PreviewProvider {
+struct ToDoDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        BoardDetailView(board: BoardModel(keyDate: Date(), title: "제목", contents: "내용", job: .frontEnd))
+        ToDoDetailView(todo: ToDoModel(keyDate: Date(), toDoType: .dev, todo: "개발 할 일", todoDetail: "개발 할 일 세부사항"))
     }
 }

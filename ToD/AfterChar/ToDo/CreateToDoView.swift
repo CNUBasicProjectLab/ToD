@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct CreateToDoView: View {
-    var category = ["Daily", "Week", "Month", "Year"]
+//    var category = ["Daily", "Week", "Month", "Year"]
     @Environment(\.dismiss) private var dissmiss
     @State private var showModal: Bool = false
-    @State var selectedCategory = ""
+    @State var selectedCategory: Category = .dev
     @State var title = ""
     @State var content = ""
     var body: some View {
@@ -26,8 +26,11 @@ struct CreateToDoView: View {
                 Text("")
             }
             Picker("Choose a ToDo category", selection: $selectedCategory) {
-                ForEach(category, id: \.self) {
-                    Text($0)
+                ForEach(Category.allCases, id: \.self) { todItem in
+                    if todItem.displayCategory != "투디 퀘스트" {
+                        Text(todItem.displayCategory)
+                            .tag(todItem)
+                    }
                 }
             }
             .pickerStyle(.segmented)

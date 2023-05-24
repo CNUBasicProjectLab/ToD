@@ -7,12 +7,12 @@
 
 import Foundation
 
-enum toDoItem: String, CaseIterable, Codable {
+enum Category: String, CaseIterable, Codable {
     case dev
     case normal
     case tod
     
-    var displayToDoItemName: String {
+    var displayCategory: String {
         switch self {
         case .dev: return "개발"
         case .normal: return "일반"
@@ -22,7 +22,7 @@ enum toDoItem: String, CaseIterable, Codable {
 }
 
 
-struct ToDoModel: Codable {
+struct ToDoModel: Codable, Hashable {
     var keyDate: Date
     
     func KeyDateString() -> String {
@@ -33,6 +33,8 @@ struct ToDoModel: Codable {
         return dateFormatter.string(from: keyDate)
     }
     
+    var toDoType: Category
     var deadLine: Date?
     var todo: String
+    var todoDetail: String
 }
