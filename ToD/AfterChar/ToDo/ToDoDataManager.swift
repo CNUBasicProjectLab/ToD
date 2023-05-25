@@ -24,10 +24,10 @@ class ToDoDataManager: ObservableObject {
     
     func getDummyDate() -> [ToDoModel] {
         return [
-            ToDoModel(keyDate: Date(), toDoType: .dev, todo: "깃허브 커밋하기", todoDetail: "알고리즘 문제풀고 커밋하기"),
-            ToDoModel(keyDate: Date(), toDoType: .dev, todo: "알고리즘 문제풀기", todoDetail: "골드 5 이상 문제 풀기"),
-            ToDoModel(keyDate: Date(), toDoType: .normal, todo: "일기 쓰기", todoDetail: "자기전에 쓰세용"),
-            ToDoModel(keyDate: Date(), toDoType: .tod, todo: "투디 퀘스트 no.1", todoDetail: "투디 퀘스트 디테일")
+            ToDoModel(keyDate: Date(), toDoType: .dev, todo: "깃허브 커밋하기", todoDetail: "알고리즘 문제풀고 커밋하기", isComplete: false),
+            ToDoModel(keyDate: Date(), toDoType: .dev, todo: "알고리즘 문제풀기", todoDetail: "골드 5 이상 문제 풀기", isComplete: false),
+            ToDoModel(keyDate: Date(), toDoType: .normal, todo: "일기 쓰기", todoDetail: "자기전에 쓰세용", isComplete: false),
+            ToDoModel(keyDate: Date(), toDoType: .tod, todo: "투디 퀘스트 no.1", todoDetail: "투디 퀘스트 디테일", isComplete: false)
         ]
     }
     

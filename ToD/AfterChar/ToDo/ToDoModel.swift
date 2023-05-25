@@ -23,8 +23,8 @@ enum Category: String, CaseIterable, Codable {
 
 
 struct ToDoModel: Codable, Hashable {
+    var id = UUID()
     var keyDate: Date
-    
     func KeyDateString() -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -37,4 +37,5 @@ struct ToDoModel: Codable, Hashable {
     var deadLine: Date?
     var todo: String
     var todoDetail: String
+    var isComplete: Bool
 }

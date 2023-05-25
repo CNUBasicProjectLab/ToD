@@ -55,4 +55,5 @@ class BoardDataManager: ObservableObject {
         let list = dataList
         dataList = list
     }
+
 }

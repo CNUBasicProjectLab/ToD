@@ -46,6 +46,6 @@ struct ToDoDetailView: View {
 
 struct ToDoDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ToDoDetailView(todo: ToDoModel(keyDate: Date(), toDoType: .dev, todo: "개발 할 일", todoDetail: "개발 할 일 세부사항"))
+        ToDoDetailView(todo: ToDoModel(keyDate: Date(), toDoType: .dev, todo: "개발 할 일", todoDetail: "개발 할 일 세부사항", isComplete: false))
     }
 }

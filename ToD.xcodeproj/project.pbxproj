@@ -163,10 +163,10 @@
 			children = (
 				861FE8B029EDC10D0093F1FA /* ToDoView.swift */,
 				BA7980602A18ECC3009DF732 /* ToDoModel.swift */,
-				BA79805E2A18EBAA009DF732 /* ToDoDataManager.swift */,
 				862077F72A077507003A3E52 /* AfterCharTabControllerView.swift */,
 				BA969B2A2A07F6D200DBD597 /* CreateToDoView.swift */,
 				BAA1128C2A1DE8E400F7739C /* ToDoDetailView.swift */,
+				BA79805E2A18EBAA009DF732 /* ToDoDataManager.swift */,
 			);
 			path = ToDo;
 			sourceTree = "<group>";

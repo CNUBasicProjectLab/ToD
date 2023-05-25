@@ -21,7 +21,7 @@ struct ToDoView: View {
         NavigationStack {
             VStack {
                 ScrollView{
-                    VStack {
+                    VStack(alignment: .leading) {
                         ZStack{
                             RoundedRectangle(cornerRadius: 15)
                                 .frame(height: 280)
@@ -41,23 +41,16 @@ struct ToDoView: View {
                         }
                         .pickerStyle(.segmented)
                         
-                        Spacer()
-                        List {
-                            ForEach(todoList, id: \.self) { list in
+                        VStack(alignment: .leading) {
+                            ForEach(todoList, id: \.id) { list in
                                 if (list.toDoType == todoCategory) {
-                                    toDoListRow(todo: list)
+                                    ToDoListRow(todo: list)
+                                        .tag(list)
                                 } else {
-                                    
-                                }
-                                
+                                }          
                             }
                         }
-                        .onAppear {
-                            getToDoList()
-                        }
-                        .refreshable {
-                            getToDoList()
-                        }
+                        .padding()
                         
                         
                     }.padding()
@@ -69,6 +62,9 @@ struct ToDoView: View {
                 }
                 
             }
+            .onAppear {
+                getToDoList()
+            }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     HStack{
@@ -78,7 +74,6 @@ struct ToDoView: View {
                         Text("투디")
                             .font(.system(size : 24, weight: .semibold))
                     }
-                    
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
@@ -89,11 +84,8 @@ struct ToDoView: View {
                     .sheet(isPresented: $showModal) {
                         CreateToDoView()
                     }
-                    
                 }
-                
             }
-            
         }
     }
     
@@ -104,20 +96,31 @@ struct ToDoView: View {
     
 }
 
-struct toDoListRow: View {
+struct ToDoListRow: View {
     var todo: ToDoModel
-    
     var body: some View {
         NavigationLink {
-            toDoListRow(todo: todo)
+            ToDoDetailView(todo: todo)
         } label: {
-            VStack(alignment: .leading) {
-                Text(todo.todo)
-                    .foregroundColor(.black)
-                
-                Text(todo.todoDetail)
-                    .lineLimit(1)
-                    .foregroundColor(.gray)
+            Divider()
+            HStack {
+                VStack(alignment: .leading) {
+                    Text(todo.todo)
+                        .foregroundColor(.black)
+                        .font(.title2)
+                    
+                    Text(todo.todoDetail)
+                        .lineLimit(1)
+                        .foregroundColor(.gray)
+                }
+                Spacer()
+                Image(systemName: "square")
+                    .resizable()
+                    .frame(width: 25, height: 25)
+                    .animation(.default, value: todo.isComplete)
+                    .onTapGesture {
+//                        todo.isComplete = true
+                    }
             }
         }
     }
