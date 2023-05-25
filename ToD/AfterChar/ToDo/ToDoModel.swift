@@ -33,6 +33,10 @@ struct ToDoModel: Codable, Hashable {
         return dateFormatter.string(from: keyDate)
     }
     
+    mutating func markAsComptete() {
+        isComplete = true
+    }
+    
     var toDoType: Category
     var deadLine: Date?
     var todo: String

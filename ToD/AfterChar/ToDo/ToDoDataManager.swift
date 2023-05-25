@@ -55,4 +55,17 @@ class ToDoDataManager: ObservableObject {
         toDoList = list
     }
     
+    func updateToDoItem(_ todo: ToDoModel) {
+        guard let index = toDoList.firstIndex(where: {$0.id == todo.id}) else {
+            return
+        }
+        toDoList[index] = todo
+        saveToDoList()
+    }
+    
+    func saveToDoList() {
+        UserDefaults.standard.set(try? PropertyListEncoder().encode(toDoList), forKey: ToDoDataManager.TODO_DATA_LIST_KEY)
+        UserDefaults.standard.synchronize()
+    }
+    
 }

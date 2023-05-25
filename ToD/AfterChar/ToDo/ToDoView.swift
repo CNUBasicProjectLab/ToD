@@ -13,7 +13,6 @@ struct ToDoView: View {
     @AppStorage("isChar") var isChar: Bool = true
     @State private var showModal: Bool = false
     @State var todoCategory: Category = .dev
-    @State var todoList: [ToDoModel] = []
     @Environment(\.refresh) private var refresh
     @State private var isRefreshing = false
     
@@ -42,12 +41,11 @@ struct ToDoView: View {
                         .pickerStyle(.segmented)
                         
                         VStack(alignment: .leading) {
-                            ForEach(todoList, id: \.id) { list in
-                                if (list.toDoType == todoCategory) {
-                                    ToDoListRow(todo: list)
-                                        .tag(list)
-                                } else {
-                                }          
+
+                            ForEach(Array(todoDataManager.getToDoList().enumerated()), id: \.offset) { idx, data in
+                                if data.toDoType == todoCategory {
+                                    ToDoListRow(todo: data)
+                                }
                             }
                         }
                         .padding()
@@ -63,7 +61,6 @@ struct ToDoView: View {
                 
             }
             .onAppear {
-                getToDoList()
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
@@ -89,15 +86,12 @@ struct ToDoView: View {
         }
     }
     
-    func getToDoList() {
-        let todos: [ToDoModel] = todoDataManager.getToDoList()
-        todoList = todos
-    }
-    
 }
 
 struct ToDoListRow: View {
     var todo: ToDoModel
+    var todoDataManager: ToDoDataManager = ToDoDataManager.shared
+    
     var body: some View {
         NavigationLink {
             ToDoDetailView(todo: todo)
@@ -114,12 +108,14 @@ struct ToDoListRow: View {
                         .foregroundColor(.gray)
                 }
                 Spacer()
-                Image(systemName: "square")
+                Image(systemName: todo.isComplete ? "checkmark.square" : "square")
                     .resizable()
                     .frame(width: 25, height: 25)
                     .animation(.default, value: todo.isComplete)
                     .onTapGesture {
-//                        todo.isComplete = true
+                        var updateTodo = todo
+                        updateTodo.isComplete.toggle()
+                        todoDataManager.updateToDoItem(updateTodo)
                     }
             }
         }
