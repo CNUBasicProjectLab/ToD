@@ -55,14 +55,5 @@ class BoardDataManager: ObservableObject {
         let list = dataList
         dataList = list
     }
-    
-    func refreshData() {
-        if let data = UserDefaults.standard.value(forKey: BoardDataManager.BOARD_DATA_LIST_KEY) as? Data {
-            let updateList = try? PropertyListDecoder().decode([BoardModel].self, from: data)
-            if let list = updateList {
-                dataList = list
-            }
-        }
-    }
-    
+
 }

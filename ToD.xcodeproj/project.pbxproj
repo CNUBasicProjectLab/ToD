@@ -27,6 +27,7 @@
 		BA7980612A18ECC3009DF732 /* ToDoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7980602A18ECC3009DF732 /* ToDoModel.swift */; };
 		BA7980632A18F884009DF732 /* CreateBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7980622A18F884009DF732 /* CreateBoardView.swift */; };
 		BA969B2B2A07F6D200DBD597 /* CreateToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA969B2A2A07F6D200DBD597 /* CreateToDoView.swift */; };
+		BAA1128D2A1DE8E400F7739C /* ToDoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA1128C2A1DE8E400F7739C /* ToDoDetailView.swift */; };
 		BAF6A6202A15B4F0004F4E14 /* BoardDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF6A61F2A15B4F0004F4E14 /* BoardDataManager.swift */; };
 		BAF6A6222A15B8B4004F4E14 /* BoardInputModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF6A6212A15B8B4004F4E14 /* BoardInputModal.swift */; };
 		BAF6A6242A15BA83004F4E14 /* BoardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF6A6232A15BA83004F4E14 /* BoardModel.swift */; };
@@ -55,6 +56,7 @@
 		BA7980602A18ECC3009DF732 /* ToDoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoModel.swift; sourceTree = "<group>"; };
 		BA7980622A18F884009DF732 /* CreateBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBoardView.swift; sourceTree = "<group>"; };
 		BA969B2A2A07F6D200DBD597 /* CreateToDoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateToDoView.swift; sourceTree = "<group>"; };
+		BAA1128C2A1DE8E400F7739C /* ToDoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDetailView.swift; sourceTree = "<group>"; };
 		BAF6A61F2A15B4F0004F4E14 /* BoardDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardDataManager.swift; sourceTree = "<group>"; };
 		BAF6A6212A15B8B4004F4E14 /* BoardInputModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardInputModal.swift; sourceTree = "<group>"; };
 		BAF6A6232A15BA83004F4E14 /* BoardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardModel.swift; sourceTree = "<group>"; };
@@ -161,9 +163,10 @@
 			children = (
 				861FE8B029EDC10D0093F1FA /* ToDoView.swift */,
 				BA7980602A18ECC3009DF732 /* ToDoModel.swift */,
-				BA79805E2A18EBAA009DF732 /* ToDoDataManager.swift */,
 				862077F72A077507003A3E52 /* AfterCharTabControllerView.swift */,
 				BA969B2A2A07F6D200DBD597 /* CreateToDoView.swift */,
+				BAA1128C2A1DE8E400F7739C /* ToDoDetailView.swift */,
+				BA79805E2A18EBAA009DF732 /* ToDoDataManager.swift */,
 			);
 			path = ToDo;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				863E48EF29E4759B00488280 /* SelectAnswerView.swift in Sources */,
 				BAF6A6222A15B8B4004F4E14 /* BoardInputModal.swift in Sources */,
 				BAF6A6242A15BA83004F4E14 /* BoardModel.swift in Sources */,
+				BAA1128D2A1DE8E400F7739C /* ToDoDetailView.swift in Sources */,
 				863E48F129E479C100488280 /* CreateCharacterView.swift in Sources */,
 				BA79805F2A18EBAA009DF732 /* ToDoDataManager.swift in Sources */,
 				862077F62A0773F6003A3E52 /* BoardView.swift in Sources */,
@@ -403,6 +407,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -434,6 +439,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

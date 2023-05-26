@@ -9,102 +9,32 @@ import SwiftUI
 
 
 struct ToDoView: View {
+    var todoDataManager: ToDoDataManager = ToDoDataManager.shared
     @AppStorage("isChar") var isChar: Bool = true
-
     @State private var showModal: Bool = false
-
-
+    @State var todoCategory: Category = .dev
+    @Environment(\.refresh) private var refresh
+    
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 ScrollView{
-                ZStack{
-                    RoundedRectangle(cornerRadius: 15)
-                        .frame(height: 280)
-//                        .padding()
-                        .foregroundColor(Color.secondary)
-                        .shadow(color: .gray, radius: 2, x: 0, y: 3)
-                    Text("투디 이미지 미리보기")
-                }
-                Divider()
-                Picker(selection: /*@START_MENU_TOKEN@*/.constant(1)/*@END_MENU_TOKEN@*/, label: /*@START_MENU_TOKEN@*/Text("Picker")/*@END_MENU_TOKEN@*/) {
-                    /*@START_MENU_TOKEN@*/Text("1").tag(1)/*@END_MENU_TOKEN@*/
-                    /*@START_MENU_TOKEN@*/Text("2").tag(2)/*@END_MENU_TOKEN@*/
-                }.pickerStyle(.segmented)
-                    .padding()
-                
-                Spacer()
-                    VStack
-                    {
-                        HStack{
-                            Image("Daily")
-                            VStack(alignment : .leading){
-                                Text("Title")
-                                Text("SubTitle").font(.caption)
-                            }.padding(.leading)
-                            Spacer()
-                            Image(systemName: "checkmark.circle").foregroundColor(.green)
-                            
-                        }
-                        .padding()
-                        
-                        HStack{
-                            Image("Week")
-                            VStack(alignment : .leading){
-                                Text("Title")
-                                Text("SubTitle").font(.caption)
-                            }.padding(.leading)
-                            Spacer()
-                            Image(systemName: "checkmark.circle").foregroundColor(.green)
-                            
-                        }
-                        .padding()
-                        
-                        HStack{
-                            Image("Month")
-                            VStack(alignment : .leading){
-                                Text("Title")
-                                Text("SubTitle").font(.caption)
-                            }.padding(.leading)
-                            Spacer()
-                            Image(systemName: "checkmark.circle").foregroundColor(.green)
-                            
-                        }
-                        .padding()
-                        
-                        HStack{
-                            Image("Year")
-                            VStack(alignment : .leading){
-                                Text("Title")
-                                Text("SubTitle").font(.caption)
-                            }.padding(.leading)
-                            Spacer()
-                            Image(systemName: "checkmark.circle").foregroundColor(.green)
-                            
-                        }
-                        .padding()
-                        
-                        HStack{
-                            Image("Mission")
-                            VStack(alignment : .leading){
-                                Text("Title")
-                                Text("SubTitle").font(.caption)
-                            }.padding(.leading)
-                            Spacer()
-                            Image(systemName: "checkmark.circle").foregroundColor(.green)
-                            
-                        }
-                        .padding()
+                    VStack(alignment: .leading) {
+                        toDCharacter
+                        Divider()
+                        toDPicker
+                        toDQuest
                     }
-                    
-                    
-                    
-                }.padding()
+                    .padding()
+                }
                 Button {
                     isChar = false
                 } label: {
                     Text("다시 false로")
                 }
+                
+            }
+            .onAppear {
                 
             }
             .toolbar {
@@ -116,7 +46,6 @@ struct ToDoView: View {
                         Text("투디")
                             .font(.system(size : 24, weight: .semibold))
                     }
-                    
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
@@ -127,13 +56,81 @@ struct ToDoView: View {
                     .sheet(isPresented: $showModal) {
                         CreateToDoView()
                     }
-                    
                 }
-                
             }
-            
         }
     }
+    
+    var toDCharacter: some View {
+        ZStack{
+            RoundedRectangle(cornerRadius: 15)
+                .frame(height: 280)
+                .foregroundColor(Color.secondary)
+                .shadow(color: .gray, radius: 2, x: 0, y: 3)
+            Text("투디 이미지 미리보기")
+        }
+    }
+    
+    var toDPicker: some View {
+        Picker("투디 퀘스트", selection: $todoCategory) {
+            ForEach(Category.allCases, id: \.self) { todItem in
+                Text(todItem.displayCategory)
+                    .tag(todItem)
+            }
+        }
+        .onChange(of: todoCategory) { newValue in
+            
+        }
+        .pickerStyle(.segmented)
+    }
+    
+    var toDQuest: some View {
+        VStack(alignment: .leading) {
+
+            ForEach(Array(todoDataManager.getToDoList().enumerated()), id: \.offset) { idx, data in
+                if (data.toDoType == todoCategory) && (data.isComplete == false) {
+                    ToDoListRow(todo: data)
+                }
+            }
+        }
+        .padding()
+    }
+    
+}
+
+struct ToDoListRow: View {
+    @State var todo: ToDoModel
+    var todoDataManager: ToDoDataManager = ToDoDataManager.shared
+    
+    var body: some View {
+        NavigationLink {
+            ToDoDetailView(todo: todo)
+        } label: {
+            Divider()
+            HStack {
+                VStack(alignment: .leading) {
+                    Text(todo.todo)
+                        .foregroundColor(.black)
+                        .font(.title2)
+                    
+                    Text(todo.todoDetail)
+                        .lineLimit(1)
+                        .foregroundColor(.gray)
+                }
+                Spacer()
+                Image(systemName: todo.isComplete ? "checkmark.square" : "square")
+                    .resizable()
+                    .frame(width: 25, height: 25)
+                    .animation(.default, value: todo.isComplete)
+                    .onTapGesture {
+                        var updateTodo = todo
+                        updateTodo.isComplete.toggle()
+                        todoDataManager.updateToDoItem(updateTodo)
+                    }
+            }
+        }
+    }
+    
 }
 
 

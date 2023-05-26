@@ -7,9 +7,24 @@
 
 import Foundation
 
-struct ToDoModel: Codable {
-    var keyDate: Date
+enum Category: String, CaseIterable, Codable {
+    case dev
+    case normal
+    case tod
     
+    var displayCategory: String {
+        switch self {
+        case .dev: return "개발"
+        case .normal: return "일반"
+        case .tod: return "투디 퀘스트"
+        }
+    }
+}
+
+
+struct ToDoModel: Codable, Hashable {
+    var id = UUID()
+    var keyDate: Date
     func KeyDateString() -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -18,7 +33,13 @@ struct ToDoModel: Codable {
         return dateFormatter.string(from: keyDate)
     }
     
-    var deadLine: Date?
+    mutating func markAsComptete() {
+        isComplete = true
+    }
     
+    var toDoType: Category
+    var deadLine: Date?
     var todo: String
+    var todoDetail: String
+    var isComplete: Bool
 }
