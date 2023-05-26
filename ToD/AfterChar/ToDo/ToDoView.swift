@@ -14,44 +14,18 @@ struct ToDoView: View {
     @State private var showModal: Bool = false
     @State var todoCategory: Category = .dev
     @Environment(\.refresh) private var refresh
-    @State private var isRefreshing = false
     
     var body: some View {
         NavigationStack {
             VStack {
                 ScrollView{
                     VStack(alignment: .leading) {
-                        ZStack{
-                            RoundedRectangle(cornerRadius: 15)
-                                .frame(height: 280)
-                                .foregroundColor(Color.secondary)
-                                .shadow(color: .gray, radius: 2, x: 0, y: 3)
-                            Text("투디 이미지 미리보기")
-                        }
+                        toDCharacter
                         Divider()
-                        Picker("투디 퀘스트", selection: $todoCategory) {
-                            ForEach(Category.allCases, id: \.self) { todItem in
-                                Text(todItem.displayCategory)
-                                    .tag(todItem)
-                            }
-                        }
-                        .onChange(of: todoCategory) { newValue in
-                            
-                        }
-                        .pickerStyle(.segmented)
-                        
-                        VStack(alignment: .leading) {
-
-                            ForEach(Array(todoDataManager.getToDoList().enumerated()), id: \.offset) { idx, data in
-                                if data.toDoType == todoCategory {
-                                    ToDoListRow(todo: data)
-                                }
-                            }
-                        }
-                        .padding()
-                        
-                        
-                    }.padding()
+                        toDPicker
+                        toDQuest
+                    }
+                    .padding()
                 }
                 Button {
                     isChar = false
@@ -61,6 +35,7 @@ struct ToDoView: View {
                 
             }
             .onAppear {
+                
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
@@ -86,10 +61,45 @@ struct ToDoView: View {
         }
     }
     
+    var toDCharacter: some View {
+        ZStack{
+            RoundedRectangle(cornerRadius: 15)
+                .frame(height: 280)
+                .foregroundColor(Color.secondary)
+                .shadow(color: .gray, radius: 2, x: 0, y: 3)
+            Text("투디 이미지 미리보기")
+        }
+    }
+    
+    var toDPicker: some View {
+        Picker("투디 퀘스트", selection: $todoCategory) {
+            ForEach(Category.allCases, id: \.self) { todItem in
+                Text(todItem.displayCategory)
+                    .tag(todItem)
+            }
+        }
+        .onChange(of: todoCategory) { newValue in
+            
+        }
+        .pickerStyle(.segmented)
+    }
+    
+    var toDQuest: some View {
+        VStack(alignment: .leading) {
+
+            ForEach(Array(todoDataManager.getToDoList().enumerated()), id: \.offset) { idx, data in
+                if (data.toDoType == todoCategory) && (data.isComplete == false) {
+                    ToDoListRow(todo: data)
+                }
+            }
+        }
+        .padding()
+    }
+    
 }
 
 struct ToDoListRow: View {
-    var todo: ToDoModel
+    @State var todo: ToDoModel
     var todoDataManager: ToDoDataManager = ToDoDataManager.shared
     
     var body: some View {
