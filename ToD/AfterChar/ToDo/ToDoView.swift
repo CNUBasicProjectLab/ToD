@@ -9,6 +9,10 @@ import SwiftUI
 
 
 struct ToDoView: View {
+//    object가 맞을까? 아닌거같은데
+//    let myJob = UserDefaults.standard.string(forKey: "myJobCategory") ?? "none"
+//    let myJob = UserDefaults.standard.set(characterCategory.self, forKey: "myJobCategory")
+    @AppStorage("myJobCategory") var myJob: String!
     var todoDataManager: ToDoDataManager = ToDoDataManager.shared
     @AppStorage("isChar") var isChar: Bool = true
     @State private var showModal: Bool = false
@@ -87,7 +91,7 @@ struct ToDoView: View {
     var toDQuest: some View {
         VStack(alignment: .leading) {
 
-            ForEach(Array(todoDataManager.getToDoList().enumerated()), id: \.offset) { idx, data in
+            ForEach(Array(todoDataManager.getToDoList(jobCategory: myJob).enumerated()), id: \.offset) { idx, data in
                 if (data.toDoType == todoCategory) && (data.isComplete == false) {
                     ToDoListRow(todo: data)
                 }

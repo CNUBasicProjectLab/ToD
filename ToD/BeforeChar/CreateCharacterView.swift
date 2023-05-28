@@ -9,126 +9,144 @@ import SwiftUI
 
 struct CreateCharacterView: View {
     @AppStorage("isChar") var isChar: Bool = false
+    @AppStorage("myJobCategory") var myJob: String = ""
     @State var index: Int = -1
     var body: some View {
-        
         VStack{
-            Spacer()
+//            Spacer()
             VStack(){
                 Text("어떤 직종을 희망하시나요?")
                     .font(.system(size : 20, weight: .semibold))
             }
             .frame(maxWidth: .infinity , alignment: .leading)
             .padding()
-            //            상단 아이콘
-            HStack(alignment: .center, spacing: 10){
-                VStack{
-                    Image("back")
-                        .resizable()
-                        .frame(width: index != 0 ? 50 : 70,height: index != 0 ? 50 : 70)
-                    Text("서버/\n백엔드")
+            VStack {
+                //            상단 아이콘
+                HStack(alignment: .center, spacing: 10) {
+                    VStack{
+                        Image("back")
+                            .resizable()
+                            .frame(width: index != 0 ? 50 : 60,height: index != 0 ? 50 : 60)
+                        Text("서버/백엔드")
+                            .minimumScaleFactor(0.5)
+                    }
+                    .frame(width: 80)
+                    .onTapGesture {
+                        index = 0
+                        myJob = characterCategory.server.displayJobName
+                    }
+                    .animation(.easeIn, value: index)
+                    VStack{
+                        Image("front")
+                            .resizable()
+                            .frame(width: index != 1 ? 50 : 60,height: index != 1 ? 50 : 60)
+                        Text("프론트엔드")
+                            .minimumScaleFactor(0.5)
+                    }
+                    .frame(width: 80)
+                    .onTapGesture {
+                        index = 1
+                        myJob = characterCategory.frontEnd.displayJobName
+                    }
+                    .animation(.easeIn, value: index)
+                    VStack{
+                        
+                        Image("mobile")
+                            .resizable()
+                            .frame(width: index != 2 ? 50 : 60,height: index != 2 ? 50 : 60)
+                        
+                        Text("모바일")
+                            .minimumScaleFactor(0.5)
+                    }
+                    .frame(width: 80)
+                    .onTapGesture {
+                        index = 2
+                        myJob = characterCategory.moblie.displayJobName
+                    }
+                    .animation(.easeIn, value: index)
+                    VStack{
+                        Image("swsolution")
+                            .resizable()
+                            .frame(width: index != 3 ? 50 : 60,height: index != 3 ? 50 : 60)
+                        
+                        Text("SW/솔루션")
+                            .minimumScaleFactor(0.5)
+                    }
+                    .frame(width: 80)
+                    .onTapGesture {
+                        index = 3
+                        myJob = characterCategory.sw.displayJobName
+                    }
+                    .animation(.easeIn, value: index)
                 }
-                .frame(width: 80)
-                .onTapGesture {
-                    index = 0
-                }
-                .animation(.easeIn, value: index)
-                VStack{
-                    Image("front")
-                        .resizable()
-                        .frame(width: index != 1 ? 50 : 70,height: index != 1 ? 50 : 70)
-                    Text("프론트엔드")
-                }
-                .frame(width: 80)
-                .onTapGesture {
-                    index = 1
-                }
-                .animation(.easeIn, value: index)
-                VStack{
 
-                    Image("mobile")
-                        .resizable()
-                        .frame(width: index != 2 ? 50 : 70,height: index != 2 ? 50 : 70)
-
-                    Text("모바일\n")
+                //            하단 아이콘
+                HStack(spacing: 10) {
+                    VStack{
+                        Image("security")
+                            .resizable()
+                            .frame(width: index != 4 ? 50 : 60,height: index != 4 ? 50 : 60)
+                        
+                        Text("보안")
+                            .minimumScaleFactor(0.5)
+                    }
+                    .frame(width: 80)
+                    .onTapGesture {
+                        index = 4
+                        myJob = characterCategory.security.displayJobName
+                    }
+                    .animation(.easeIn, value: index)
+                    VStack{
+                        Image("bug")
+                            .resizable()
+                            .frame(width: index != 5 ? 50 : 60,height: index != 5 ? 50 : 60)
+                        
+                        Text("QA엔지니어")
+                            .minimumScaleFactor(0.5)
+                    }
+                    .frame(width: 80)
+                    .onTapGesture {
+                        index = 5
+                        myJob = characterCategory.qa.displayJobName
+                    }
+                    .animation(.easeIn, value: index)
+                    VStack{
+                        Image("embedded")
+                            .resizable()
+                            .frame(width: index != 6 ? 50 : 60,height: index != 6 ? 50 : 60)
+                        
+                        Text("임베디드")
+                            .minimumScaleFactor(0.5)
+                    }
+                    .frame(width: 80)
+                    .onTapGesture {
+                        index = 6
+                        myJob = characterCategory.embeded.displayJobName
+                    }
+                    .animation(.easeIn, value: index)
+                    VStack{
+                        Image("ai")
+                            .resizable()
+                            .frame(width: index != 7 ? 50 : 60,height: index != 7 ? 50 : 60)
+                        
+                        Text("인공지능/머신러닝")
+                            .minimumScaleFactor(0.5)
+                    }
+                    .frame(width: 80)
+                    .onTapGesture {
+                        index = 7
+                        myJob = characterCategory.ai.displayJobName
+                    }
+                    .animation(.easeIn, value: index)
                 }
-                .frame(width: 80)
-                .onTapGesture {
-                    index = 2
-                }
-                .animation(.easeIn, value: index)
-                VStack{
-                    Image("swsolution")
-                        .resizable()
-                        .frame(width: index != 3 ? 50 : 70,height: index != 3 ? 50 : 70)
-                    
-                    Text("SW/\n솔루션")
-                }
-                .frame(width: 80)
-                .onTapGesture {
-                    index = 3
-                }
-                .animation(.easeIn, value: index)
             }
-            .padding(.bottom)
-            //            하단 아이콘
-            HStack(spacing: 10){
-                VStack{
-                    Image("security")
-                        .resizable()
-                        .frame(width: index != 4 ? 50 : 70,height: index != 4 ? 50 : 70)
-
-                    Text("보안\n")
-                }
-                .frame(width: 80)
-                .onTapGesture {
-                    index = 4
-                }
-                .animation(.easeIn, value: index)
-                VStack{
-                    Image("bug")
-                        .resizable()
-                        .frame(width: index != 5 ? 50 : 70,height: index != 5 ? 50 : 70)
-
-                    Text("QA엔지니어")
-                }
-                .frame(width: 80)
-                .onTapGesture {
-                    index = 5
-                }
-                .animation(.easeIn, value: index)
-                VStack{
-                    Image("embedded")
-                        .resizable()
-                        .frame(width: index != 6 ? 50 : 70,height: index != 6 ? 50 : 70)
-
-                    Text("임베디드\n")
-                }
-                .frame(width: 80)
-                .onTapGesture {
-                    index = 6
-                }
-                .animation(.easeIn, value: index)
-                VStack{
-                    Image("ai")
-                        .resizable()
-                        .frame(width: index != 7 ? 50 : 70,height: index != 7 ? 50 : 70)
-
-                    Text("인공지능/\n머신러닝")
-                }
-                .frame(width: 80)
-                .onTapGesture {
-                    index = 7
-                }
-                .animation(.easeIn, value: index)
-            }
-//            .padding()
-            
+            .frame(height: 230)
             RoundedRectangle(cornerRadius: 15 , style: .continuous)
                 .fill(Color.gray)
                 .padding()
                 .overlay(Text("투디 미리보기")
                 .foregroundColor(Color.white))
+
             VStack(alignment :.leading){
                 Text("⚠️ 주의")
                     .font(.system(size : 20, weight: .semibold))
@@ -141,7 +159,7 @@ struct CreateCharacterView: View {
             Button {
                 isChar = true
             } label: {
-                Text("생성하기")
+                Text("ToD 캐릭터 생성하기")
                     .font(.headline)
                     .frame(maxWidth: 200)
                     .foregroundColor(.white)
