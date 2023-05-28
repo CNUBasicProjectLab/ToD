@@ -9,9 +9,6 @@ import SwiftUI
 
 
 struct ToDoView: View {
-//    object가 맞을까? 아닌거같은데
-//    let myJob = UserDefaults.standard.string(forKey: "myJobCategory") ?? "none"
-//    let myJob = UserDefaults.standard.set(characterCategory.self, forKey: "myJobCategory")
     @AppStorage("myJobCategory") var myJob: String!
     var todoDataManager: ToDoDataManager = ToDoDataManager.shared
     @AppStorage("isChar") var isChar: Bool = true
@@ -32,6 +29,7 @@ struct ToDoView: View {
                     .padding()
                 }
                 Button {
+                    todoDataManager.toDoList = []
                     isChar = false
                 } label: {
                     Text("다시 false로")
