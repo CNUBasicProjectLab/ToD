@@ -13,7 +13,7 @@ struct CreateCharacterView: View {
     @State var index: Int = -1
     var body: some View {
         VStack{
-//            Spacer()
+            //            Spacer()
             VStack(){
                 Text("어떤 직종을 희망하시나요?")
                     .font(.system(size : 20, weight: .semibold))
@@ -79,7 +79,7 @@ struct CreateCharacterView: View {
                     }
                     .animation(.easeIn, value: index)
                 }
-
+                
                 //            하단 아이콘
                 HStack(spacing: 10) {
                     VStack{
@@ -141,12 +141,64 @@ struct CreateCharacterView: View {
                 }
             }
             .frame(height: 230)
-            RoundedRectangle(cornerRadius: 15 , style: .continuous)
-                .fill(Color.gray)
-                .padding()
-                .overlay(Text("투디 미리보기")
-                .foregroundColor(Color.white))
-
+            VStack {
+                switch myJob {
+                case characterCategory.frontEnd.displayJobName:
+                    Image("frontend")
+                        .resizable()
+                        .frame(width: 200, height: 200)
+                        .padding()
+                case characterCategory.server.displayJobName:
+                    Image("backend")
+                        .resizable()
+                        .frame(width: 200, height: 200)
+                        .padding()
+                case characterCategory.moblie.displayJobName:
+                    Image("mobile")
+                        .resizable()
+                        .frame(width: 200, height: 200)
+                        .padding()
+                case characterCategory.sw.displayJobName:
+                    Image("sw")
+                        .resizable()
+                        .frame(width: 200, height: 200)
+                        .padding()
+                case characterCategory.security.displayJobName:
+                    Image("security")
+                        .resizable()
+                        .frame(width: 200, height: 200)
+                        .padding()
+                case characterCategory.qa.displayJobName:
+                    Image("qa")
+                        .resizable()
+                        .frame(width: 200, height: 200)
+                        .padding()
+                case characterCategory.embeded.displayJobName:
+                    Image("embeded")
+                        .resizable()
+                        .frame(width: 200, height: 200)
+                        .padding()
+                case characterCategory.ai.displayJobName:
+                    Image("ai")
+                        .resizable()
+                        .frame(width: 200, height: 200)
+                        .padding()
+                    
+                default:
+                    RoundedRectangle(cornerRadius: 15 , style: .continuous)
+                        .fill(Color.gray)
+                        .padding()
+                        .overlay(Text("투디 미리보기")
+                            .foregroundColor(Color.white))
+                    
+                }
+            }
+            //            RoundedRectangle(cornerRadius: 15 , style: .continuous)
+            //                .fill(Color.gray)
+            //                .padding()
+            //                .overlay(Text("투디 미리보기")
+            //                .foregroundColor(Color.white))
+            
             VStack(alignment :.leading){
                 Text("⚠️ 주의")
                     .font(.system(size : 20, weight: .semibold))
