@@ -64,12 +64,57 @@ struct ToDoView: View {
     }
     
     var toDCharacter: some View {
-        ZStack{
-            RoundedRectangle(cornerRadius: 15)
-                .frame(height: 280)
-                .foregroundColor(Color.secondary)
-                .shadow(color: .gray, radius: 2, x: 0, y: 3)
-            Text("투디 이미지 미리보기")
+        VStack {
+            switch myJob {
+            case characterCategory.frontEnd.displayJobName:
+                Image("frontend")
+                    .resizable()
+                    .frame(width: 200, height: 200)
+                    .padding()
+            case characterCategory.server.displayJobName:
+                Image("backend")
+                    .resizable()
+                    .frame(width: 200, height: 200)
+                    .padding()
+            case characterCategory.moblie.displayJobName:
+                Image("mobile")
+                    .resizable()
+                    .frame(width: 200, height: 200)
+                    .padding()
+            case characterCategory.sw.displayJobName:
+                Image("sw")
+                    .resizable()
+                    .frame(width: 200, height: 200)
+                    .padding()
+            case characterCategory.security.displayJobName:
+                Image("security")
+                    .resizable()
+                    .frame(width: 200, height: 200)
+                    .padding()
+            case characterCategory.qa.displayJobName:
+                Image("qa")
+                    .resizable()
+                    .frame(width: 200, height: 200)
+                    .padding()
+            case characterCategory.embeded.displayJobName:
+                Image("embeded")
+                    .resizable()
+                    .frame(width: 200, height: 200)
+                    .padding()
+            case characterCategory.ai.displayJobName:
+                Image("ai")
+                    .resizable()
+                    .frame(width: 200, height: 200)
+                    .padding()
+                
+            default:
+                RoundedRectangle(cornerRadius: 15 , style: .continuous)
+                    .fill(Color.gray)
+                    .padding()
+                    .overlay(Text("투디 미리보기")
+                        .foregroundColor(Color.white))
+                
+            }
         }
     }
     

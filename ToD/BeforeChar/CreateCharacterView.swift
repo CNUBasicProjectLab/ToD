@@ -15,8 +15,11 @@ struct CreateCharacterView: View {
         VStack{
             //            Spacer()
             VStack(){
-                Text("어떤 직종을 희망하시나요?")
-                    .font(.system(size : 20, weight: .semibold))
+                HStack {
+                    Text("어떤 직종을 희망하시나요?")
+                        .font(.system(size : 20, weight: .semibold))
+                    Text("\(myJob)")
+                }
             }
             .frame(maxWidth: .infinity , alignment: .leading)
             .padding()
@@ -185,12 +188,10 @@ struct CreateCharacterView: View {
                         .padding()
                     
                 default:
-                    RoundedRectangle(cornerRadius: 15 , style: .continuous)
-                        .fill(Color.gray)
+                    Image("default")
+                        .resizable()
+                        .frame(width: 200, height: 200)
                         .padding()
-                        .overlay(Text("투디 미리보기")
-                            .foregroundColor(Color.white))
-                    
                 }
             }
             //            RoundedRectangle(cornerRadius: 15 , style: .continuous)
