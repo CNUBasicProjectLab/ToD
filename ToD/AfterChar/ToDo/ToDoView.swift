@@ -26,11 +26,16 @@ struct ToDoView: View {
                         Divider()
                         toDPicker
                         toDQuest
+                            .refreshable {
+                                
+                            }
                     }
                     .padding()
                 }
                 Button {
                     todoDataManager.toDoList = []
+                    todoDataManager.saveToDoList()
+                    myJob = ""
                     isChar = false
                 } label: {
                     Text("투디 다시 생성하기")
@@ -53,6 +58,7 @@ struct ToDoView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
                         self.showModal = true
+
                     } label: {
                         Label("Profile", systemImage: "square.and.pencil")
                     }
@@ -177,7 +183,6 @@ struct ToDoListRow: View {
                         var updateTodo = todo
                         updateTodo.isComplete.toggle()
                         todoDataManager.updateToDoItem(updateTodo)
-                        toDoList = todoDataManager.toDoList
                     }
             }
         }
@@ -190,6 +195,5 @@ struct ToDoListRow: View {
 struct ToDoView_Previews: PreviewProvider {
     static var previews: some View {
         ToDoView()
-//            .previewLayout(.device)
     }
 }
