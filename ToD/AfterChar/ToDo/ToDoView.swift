@@ -67,53 +67,51 @@ struct ToDoView: View {
         VStack {
             switch myJob {
             case characterCategory.frontEnd.displayJobName:
-                Image("frontend")
+                Image("frontend_character")
                     .resizable()
                     .frame(width: 200, height: 200)
                     .padding()
             case characterCategory.server.displayJobName:
-                Image("backend")
+                Image("backend_character")
                     .resizable()
                     .frame(width: 200, height: 200)
                     .padding()
             case characterCategory.moblie.displayJobName:
-                Image("mobile")
+                Image("moblie_character")
                     .resizable()
                     .frame(width: 200, height: 200)
                     .padding()
             case characterCategory.sw.displayJobName:
-                Image("sw")
+                Image("sw_character")
                     .resizable()
                     .frame(width: 200, height: 200)
                     .padding()
             case characterCategory.security.displayJobName:
-                Image("security")
+                Image("security_character")
                     .resizable()
                     .frame(width: 200, height: 200)
                     .padding()
             case characterCategory.qa.displayJobName:
-                Image("qa")
+                Image("qa_character")
                     .resizable()
                     .frame(width: 200, height: 200)
                     .padding()
             case characterCategory.embeded.displayJobName:
-                Image("embeded")
+                Image("embeded_character")
                     .resizable()
                     .frame(width: 200, height: 200)
                     .padding()
             case characterCategory.ai.displayJobName:
-                Image("ai")
+                Image("ai_character")
                     .resizable()
                     .frame(width: 200, height: 200)
                     .padding()
                 
             default:
-                RoundedRectangle(cornerRadius: 15 , style: .continuous)
-                    .fill(Color.gray)
+                Image("default_character")
+                    .resizable()
+                    .frame(width: 200, height: 200)
                     .padding()
-                    .overlay(Text("투디 미리보기")
-                        .foregroundColor(Color.white))
-                
             }
         }
     }
@@ -159,6 +157,7 @@ struct ToDoListRow: View {
                     Text(todo.todo)
                         .foregroundColor(.black)
                         .font(.title2)
+                        .lineLimit(15)
                     
                     Text(todo.todoDetail)
                         .lineLimit(1)
@@ -185,5 +184,6 @@ struct ToDoListRow: View {
 struct ToDoView_Previews: PreviewProvider {
     static var previews: some View {
         ToDoView()
+//            .previewLayout(.device)
     }
 }
