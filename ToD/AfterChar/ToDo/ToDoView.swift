@@ -10,11 +10,12 @@ import SwiftUI
 
 struct ToDoView: View {
     @AppStorage("myJobCategory") var myJob: String!
-    var todoDataManager: ToDoDataManager = ToDoDataManager.shared
+    @ObservedObject var todoDataManager: ToDoDataManager = ToDoDataManager.shared
     @AppStorage("isChar") var isChar: Bool = true
     @State private var showModal: Bool = false
     @State var todoCategory: Category = .dev
     @Environment(\.refresh) private var refresh
+    
     
     var body: some View {
         NavigationStack {
@@ -146,7 +147,7 @@ struct ToDoView: View {
 struct ToDoListRow: View {
     @State var todo: ToDoModel
     @State var toDoList: [ToDoModel] = []
-    var todoDataManager: ToDoDataManager = ToDoDataManager.shared
+    @ObservedObject var todoDataManager: ToDoDataManager = ToDoDataManager.shared
     
     var body: some View {
         NavigationLink {
