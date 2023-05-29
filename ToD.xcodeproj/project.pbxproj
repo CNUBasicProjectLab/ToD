@@ -7,18 +7,62 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		86063C2F29EB06C000725AAD /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 86063C2E29EB06C000725AAD /* Lottie */; };
+		86063C3129EB06DE00725AAD /* thinking.json in Resources */ = {isa = PBXBuildFile; fileRef = 86063C3029EB06DE00725AAD /* thinking.json */; };
+		86063C3629EB085700725AAD /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86063C3529EB085700725AAD /* LottieView.swift */; };
+		86063C3829EB0FCC00725AAD /* intro.json in Resources */ = {isa = PBXBuildFile; fileRef = 86063C3729EB0FCC00725AAD /* intro.json */; };
+		861A4B7E29E06732002C740C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861A4B7D29E06732002C740C /* MainView.swift */; };
+		861FE8B129EDC10D0093F1FA /* ToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861FE8B029EDC10D0093F1FA /* ToDoView.swift */; };
+		862077F62A0773F6003A3E52 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862077F52A0773F6003A3E52 /* BoardView.swift */; };
+		862077F82A077507003A3E52 /* AfterCharTabControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862077F72A077507003A3E52 /* AfterCharTabControllerView.swift */; };
+		863E48EB29E46E9800488280 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863E48EA29E46E9800488280 /* IntroView.swift */; };
+		863E48EF29E4759B00488280 /* SelectAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863E48EE29E4759B00488280 /* SelectAnswerView.swift */; };
+		863E48F129E479C100488280 /* CreateCharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863E48F029E479C100488280 /* CreateCharacterView.swift */; };
 		86DE110E29DFB52E00BA5643 /* ToDApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DE110D29DFB52E00BA5643 /* ToDApp.swift */; };
-		86DE111029DFB52E00BA5643 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DE110F29DFB52E00BA5643 /* ContentView.swift */; };
+		86DE111029DFB52E00BA5643 /* WebContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DE110F29DFB52E00BA5643 /* WebContentView.swift */; };
 		86DE111229DFB52F00BA5643 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86DE111129DFB52F00BA5643 /* Assets.xcassets */; };
 		86DE111529DFB52F00BA5643 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86DE111429DFB52F00BA5643 /* Preview Assets.xcassets */; };
+		BA48AFE629E55CED009A2820 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA48AFE529E55CED009A2820 /* Launch Screen.storyboard */; };
+		BA79805F2A18EBAA009DF732 /* ToDoDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA79805E2A18EBAA009DF732 /* ToDoDataManager.swift */; };
+		BA7980612A18ECC3009DF732 /* ToDoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7980602A18ECC3009DF732 /* ToDoModel.swift */; };
+		BA7980632A18F884009DF732 /* CreateBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7980622A18F884009DF732 /* CreateBoardView.swift */; };
+		BA969B2B2A07F6D200DBD597 /* CreateToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA969B2A2A07F6D200DBD597 /* CreateToDoView.swift */; };
+		BAA1128D2A1DE8E400F7739C /* ToDoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA1128C2A1DE8E400F7739C /* ToDoDetailView.swift */; };
+		BADE0EEA2A2245FE000F9317 /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADE0EE92A2245FE000F9317 /* CharacterModel.swift */; };
+		BAF6A6202A15B4F0004F4E14 /* BoardDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF6A61F2A15B4F0004F4E14 /* BoardDataManager.swift */; };
+		BAF6A6222A15B8B4004F4E14 /* BoardInputModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF6A6212A15B8B4004F4E14 /* BoardInputModal.swift */; };
+		BAF6A6242A15BA83004F4E14 /* BoardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF6A6232A15BA83004F4E14 /* BoardModel.swift */; };
+		BAF6A6262A1664BD004F4E14 /* BoardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF6A6252A1664BD004F4E14 /* BoardDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		86063C3029EB06DE00725AAD /* thinking.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = thinking.json; sourceTree = "<group>"; };
+		86063C3529EB085700725AAD /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		86063C3729EB0FCC00725AAD /* intro.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = intro.json; sourceTree = "<group>"; };
+		861A4B7A29E06589002C740C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		861A4B7D29E06732002C740C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		861FE8B029EDC10D0093F1FA /* ToDoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoView.swift; sourceTree = "<group>"; };
+		862077F52A0773F6003A3E52 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
+		862077F72A077507003A3E52 /* AfterCharTabControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterCharTabControllerView.swift; sourceTree = "<group>"; };
+		863E48EA29E46E9800488280 /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
+		863E48EE29E4759B00488280 /* SelectAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAnswerView.swift; sourceTree = "<group>"; };
+		863E48F029E479C100488280 /* CreateCharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCharacterView.swift; sourceTree = "<group>"; };
 		86DE110A29DFB52E00BA5643 /* ToD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86DE110D29DFB52E00BA5643 /* ToDApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDApp.swift; sourceTree = "<group>"; };
-		86DE110F29DFB52E00BA5643 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		86DE110F29DFB52E00BA5643 /* WebContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebContentView.swift; sourceTree = "<group>"; };
 		86DE111129DFB52F00BA5643 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		86DE111429DFB52F00BA5643 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BA48AFE529E55CED009A2820 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		BA79805E2A18EBAA009DF732 /* ToDoDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDataManager.swift; sourceTree = "<group>"; };
+		BA7980602A18ECC3009DF732 /* ToDoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoModel.swift; sourceTree = "<group>"; };
+		BA7980622A18F884009DF732 /* CreateBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBoardView.swift; sourceTree = "<group>"; };
+		BA969B2A2A07F6D200DBD597 /* CreateToDoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateToDoView.swift; sourceTree = "<group>"; };
+		BAA1128C2A1DE8E400F7739C /* ToDoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDetailView.swift; sourceTree = "<group>"; };
+		BADE0EE92A2245FE000F9317 /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
+		BAF6A61F2A15B4F0004F4E14 /* BoardDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardDataManager.swift; sourceTree = "<group>"; };
+		BAF6A6212A15B8B4004F4E14 /* BoardInputModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardInputModal.swift; sourceTree = "<group>"; };
+		BAF6A6232A15BA83004F4E14 /* BoardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardModel.swift; sourceTree = "<group>"; };
+		BAF6A6252A1664BD004F4E14 /* BoardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,12 +70,44 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86063C2F29EB06C000725AAD /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		86063C3229EB06EC00725AAD /* Gifs */ = {
+			isa = PBXGroup;
+			children = (
+				86063C3029EB06DE00725AAD /* thinking.json */,
+				86063C3729EB0FCC00725AAD /* intro.json */,
+				86063C3529EB085700725AAD /* LottieView.swift */,
+			);
+			path = Gifs;
+			sourceTree = "<group>";
+		};
+		861FE8AE29EDC0610093F1FA /* BeforeChar */ = {
+			isa = PBXGroup;
+			children = (
+				863E48EA29E46E9800488280 /* IntroView.swift */,
+				863E48EE29E4759B00488280 /* SelectAnswerView.swift */,
+				86DE110F29DFB52E00BA5643 /* WebContentView.swift */,
+				863E48F029E479C100488280 /* CreateCharacterView.swift */,
+				BADE0EE92A2245FE000F9317 /* CharacterModel.swift */,
+			);
+			path = BeforeChar;
+			sourceTree = "<group>";
+		};
+		861FE8AF29EDC0F10093F1FA /* AfterChar */ = {
+			isa = PBXGroup;
+			children = (
+				BAF4CEA12A1CB27100F0E367 /* ToDo */,
+				BA7980642A18F88B009DF732 /* Board */,
+			);
+			path = AfterChar;
+			sourceTree = "<group>";
+		};
 		86DE110129DFB52E00BA5643 = {
 			isa = PBXGroup;
 			children = (
@@ -51,8 +127,13 @@
 		86DE110C29DFB52E00BA5643 /* ToD */ = {
 			isa = PBXGroup;
 			children = (
+				861FE8AE29EDC0610093F1FA /* BeforeChar */,
+				861FE8AF29EDC0F10093F1FA /* AfterChar */,
+				86063C3229EB06EC00725AAD /* Gifs */,
 				86DE110D29DFB52E00BA5643 /* ToDApp.swift */,
-				86DE110F29DFB52E00BA5643 /* ContentView.swift */,
+				861A4B7D29E06732002C740C /* MainView.swift */,
+				BA48AFE529E55CED009A2820 /* Launch Screen.storyboard */,
+				861A4B7A29E06589002C740C /* Info.plist */,
 				86DE111129DFB52F00BA5643 /* Assets.xcassets */,
 				86DE111329DFB52F00BA5643 /* Preview Content */,
 			);
@@ -65,6 +146,32 @@
 				86DE111429DFB52F00BA5643 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BA7980642A18F88B009DF732 /* Board */ = {
+			isa = PBXGroup;
+			children = (
+				862077F52A0773F6003A3E52 /* BoardView.swift */,
+				BA7980622A18F884009DF732 /* CreateBoardView.swift */,
+				BAF6A6252A1664BD004F4E14 /* BoardDetailView.swift */,
+				BAF6A6212A15B8B4004F4E14 /* BoardInputModal.swift */,
+				BAF6A6232A15BA83004F4E14 /* BoardModel.swift */,
+				BAF6A61F2A15B4F0004F4E14 /* BoardDataManager.swift */,
+			);
+			path = Board;
+			sourceTree = "<group>";
+		};
+		BAF4CEA12A1CB27100F0E367 /* ToDo */ = {
+			isa = PBXGroup;
+			children = (
+				861FE8B029EDC10D0093F1FA /* ToDoView.swift */,
+				BA7980602A18ECC3009DF732 /* ToDoModel.swift */,
+				862077F72A077507003A3E52 /* AfterCharTabControllerView.swift */,
+				BA969B2A2A07F6D200DBD597 /* CreateToDoView.swift */,
+				BAA1128C2A1DE8E400F7739C /* ToDoDetailView.swift */,
+				BA79805E2A18EBAA009DF732 /* ToDoDataManager.swift */,
+			);
+			path = ToDo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +190,9 @@
 			dependencies = (
 			);
 			name = ToD;
+			packageProductDependencies = (
+				86063C2E29EB06C000725AAD /* Lottie */,
+			);
 			productName = ToD;
 			productReference = 86DE110A29DFB52E00BA5643 /* ToD.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +221,9 @@
 				Base,
 			);
 			mainGroup = 86DE110129DFB52E00BA5643;
+			packageReferences = (
+				86063C2D29EB06C000725AAD /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = 86DE110B29DFB52E00BA5643 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,8 +238,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA48AFE629E55CED009A2820 /* Launch Screen.storyboard in Resources */,
 				86DE111529DFB52F00BA5643 /* Preview Assets.xcassets in Resources */,
+				86063C3129EB06DE00725AAD /* thinking.json in Resources */,
 				86DE111229DFB52F00BA5643 /* Assets.xcassets in Resources */,
+				86063C3829EB0FCC00725AAD /* intro.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +253,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86DE111029DFB52E00BA5643 /* ContentView.swift in Sources */,
+				BAF6A6202A15B4F0004F4E14 /* BoardDataManager.swift in Sources */,
+				BADE0EEA2A2245FE000F9317 /* CharacterModel.swift in Sources */,
+				862077F82A077507003A3E52 /* AfterCharTabControllerView.swift in Sources */,
+				861A4B7E29E06732002C740C /* MainView.swift in Sources */,
+				863E48EB29E46E9800488280 /* IntroView.swift in Sources */,
+				BAF6A6262A1664BD004F4E14 /* BoardDetailView.swift in Sources */,
+				BA7980632A18F884009DF732 /* CreateBoardView.swift in Sources */,
+				861FE8B129EDC10D0093F1FA /* ToDoView.swift in Sources */,
+				86DE111029DFB52E00BA5643 /* WebContentView.swift in Sources */,
+				863E48EF29E4759B00488280 /* SelectAnswerView.swift in Sources */,
+				BAF6A6222A15B8B4004F4E14 /* BoardInputModal.swift in Sources */,
+				BAF6A6242A15BA83004F4E14 /* BoardModel.swift in Sources */,
+				BAA1128D2A1DE8E400F7739C /* ToDoDetailView.swift in Sources */,
+				863E48F129E479C100488280 /* CreateCharacterView.swift in Sources */,
+				BA79805F2A18EBAA009DF732 /* ToDoDataManager.swift in Sources */,
+				862077F62A0773F6003A3E52 /* BoardView.swift in Sources */,
 				86DE110E29DFB52E00BA5643 /* ToDApp.swift in Sources */,
+				86063C3629EB085700725AAD /* LottieView.swift in Sources */,
+				BA7980612A18ECC3009DF732 /* ToDoModel.swift in Sources */,
+				BA969B2B2A07F6D200DBD597 /* CreateToDoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,13 +401,17 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ToD/Preview Content\"";
+				DEVELOPMENT_TEAM = ZX8V36P46K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ToD/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -295,13 +433,17 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ToD/Preview Content\"";
+				DEVELOPMENT_TEAM = ZX8V36P46K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ToD/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -337,6 +479,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		86063C2D29EB06C000725AAD /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		86063C2E29EB06C000725AAD /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 86063C2D29EB06C000725AAD /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 86DE110229DFB52E00BA5643 /* Project object */;
 }

@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct ToDApp: App {
+    
+    init() {
+            Thread.sleep(forTimeInterval: 2)
+        }
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
         }
     }
 }
