@@ -20,7 +20,7 @@ struct ToDoView: View {
         NavigationStack {
             VStack {
                 ScrollView{
-                    VStack(alignment: .leading) {
+                    VStack(alignment: .center) {
                         toDCharacter
                         Divider()
                         toDPicker
@@ -155,11 +155,14 @@ struct ToDoListRow: View {
             HStack {
                 VStack(alignment: .leading) {
                     Text(todo.todo)
+                        .multilineTextAlignment(.leading)
                         .foregroundColor(.black)
-                        .font(.title2)
+                        .font(.title3)
                         .lineLimit(15)
                     
+                    
                     Text(todo.todoDetail)
+                        .multilineTextAlignment(.leading)
                         .lineLimit(1)
                         .foregroundColor(.gray)
                 }
