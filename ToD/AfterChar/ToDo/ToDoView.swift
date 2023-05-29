@@ -9,17 +9,19 @@ import SwiftUI
 
 
 struct ToDoView: View {
-    var todoDataManager: ToDoDataManager = ToDoDataManager.shared
+    @AppStorage("myJobCategory") var myJob: String!
+    @ObservedObject var todoDataManager: ToDoDataManager = ToDoDataManager.shared
     @AppStorage("isChar") var isChar: Bool = true
     @State private var showModal: Bool = false
     @State var todoCategory: Category = .dev
     @Environment(\.refresh) private var refresh
     
+    
     var body: some View {
         NavigationStack {
             VStack {
                 ScrollView{
-                    VStack(alignment: .leading) {
+                    VStack(alignment: .center) {
                         toDCharacter
                         Divider()
                         toDPicker
@@ -28,9 +30,10 @@ struct ToDoView: View {
                     .padding()
                 }
                 Button {
+                    todoDataManager.toDoList = []
                     isChar = false
                 } label: {
-                    Text("다시 false로")
+                    Text("투디 다시 생성하기")
                 }
                 
             }
@@ -62,12 +65,55 @@ struct ToDoView: View {
     }
     
     var toDCharacter: some View {
-        ZStack{
-            RoundedRectangle(cornerRadius: 15)
-                .frame(height: 280)
-                .foregroundColor(Color.secondary)
-                .shadow(color: .gray, radius: 2, x: 0, y: 3)
-            Text("투디 이미지 미리보기")
+        VStack {
+            switch myJob {
+            case characterCategory.frontEnd.displayJobName:
+                Image("frontend_character")
+                    .resizable()
+                    .frame(width: 200, height: 200)
+                    .padding()
+            case characterCategory.server.displayJobName:
+                Image("backend_character")
+                    .resizable()
+                    .frame(width: 200, height: 200)
+                    .padding()
+            case characterCategory.moblie.displayJobName:
+                Image("moblie_character")
+                    .resizable()
+                    .frame(width: 200, height: 200)
+                    .padding()
+            case characterCategory.sw.displayJobName:
+                Image("sw_character")
+                    .resizable()
+                    .frame(width: 200, height: 200)
+                    .padding()
+            case characterCategory.security.displayJobName:
+                Image("security_character")
+                    .resizable()
+                    .frame(width: 200, height: 200)
+                    .padding()
+            case characterCategory.qa.displayJobName:
+                Image("qa_character")
+                    .resizable()
+                    .frame(width: 200, height: 200)
+                    .padding()
+            case characterCategory.embeded.displayJobName:
+                Image("embeded_character")
+                    .resizable()
+                    .frame(width: 200, height: 200)
+                    .padding()
+            case characterCategory.ai.displayJobName:
+                Image("ai_character")
+                    .resizable()
+                    .frame(width: 200, height: 200)
+                    .padding()
+                
+            default:
+                Image("default_character")
+                    .resizable()
+                    .frame(width: 200, height: 200)
+                    .padding()
+            }
         }
     }
     
@@ -87,7 +133,7 @@ struct ToDoView: View {
     var toDQuest: some View {
         VStack(alignment: .leading) {
 
-            ForEach(Array(todoDataManager.getToDoList().enumerated()), id: \.offset) { idx, data in
+            ForEach(Array(todoDataManager.getToDoList(jobCategory: myJob).enumerated()), id: \.offset) { idx, data in
                 if (data.toDoType == todoCategory) && (data.isComplete == false) {
                     ToDoListRow(todo: data)
                 }
@@ -100,7 +146,8 @@ struct ToDoView: View {
 
 struct ToDoListRow: View {
     @State var todo: ToDoModel
-    var todoDataManager: ToDoDataManager = ToDoDataManager.shared
+    @State var toDoList: [ToDoModel] = []
+    @ObservedObject var todoDataManager: ToDoDataManager = ToDoDataManager.shared
     
     var body: some View {
         NavigationLink {
@@ -110,10 +157,14 @@ struct ToDoListRow: View {
             HStack {
                 VStack(alignment: .leading) {
                     Text(todo.todo)
+                        .multilineTextAlignment(.leading)
                         .foregroundColor(.black)
-                        .font(.title2)
+                        .font(.title3)
+                        
+                    
                     
                     Text(todo.todoDetail)
+                        .multilineTextAlignment(.leading)
                         .lineLimit(1)
                         .foregroundColor(.gray)
                 }
@@ -126,6 +177,7 @@ struct ToDoListRow: View {
                         var updateTodo = todo
                         updateTodo.isComplete.toggle()
                         todoDataManager.updateToDoItem(updateTodo)
+                        toDoList = todoDataManager.toDoList
                     }
             }
         }
@@ -138,5 +190,6 @@ struct ToDoListRow: View {
 struct ToDoView_Previews: PreviewProvider {
     static var previews: some View {
         ToDoView()
+//            .previewLayout(.device)
     }
 }

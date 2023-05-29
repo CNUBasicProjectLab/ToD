@@ -18,10 +18,10 @@ struct SelectAnswerView: View {
             
             LottieView(filename: "thinking")
                 .frame(width: 200, height: 250)
-            Text("희망하는 개발자가 있나요?")
+            Text("희망하는 분야가 있나요?")
                 .font(.system(size : 20, weight: .semibold))
                 .padding(.bottom)
-            Text("원하는 개발자가 생각이 안난다면 투디가 도와드릴게요")
+            Text("원하는 분야가 생각이 안난다면 투디가 도와드릴게요")
             //                    .frame(width: 260)
                 .foregroundColor(.gray)
                 .font(.system(size : 15, weight: .semibold))
@@ -38,7 +38,7 @@ struct SelectAnswerView: View {
 //                        .navigationBarBackButtonHidden(true)
                 }label:{
                     VStack{
-                        Text("생성하기")
+                        Text("시작하기")
                             .font(.headline)
                             .frame(maxWidth: .infinity)
                             .foregroundColor(.blue)
@@ -55,7 +55,7 @@ struct SelectAnswerView: View {
                     
                     //                        .navigationBarBackButtonHidden(true)
                 }label:{
-                    Text("도움 받기")
+                    Text("도움받기")
                         .font(.headline)
                         .frame(maxWidth: .infinity)
                         .foregroundColor(.white)

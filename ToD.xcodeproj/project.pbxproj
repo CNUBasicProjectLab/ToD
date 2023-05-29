@@ -28,6 +28,7 @@
 		BA7980632A18F884009DF732 /* CreateBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7980622A18F884009DF732 /* CreateBoardView.swift */; };
 		BA969B2B2A07F6D200DBD597 /* CreateToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA969B2A2A07F6D200DBD597 /* CreateToDoView.swift */; };
 		BAA1128D2A1DE8E400F7739C /* ToDoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA1128C2A1DE8E400F7739C /* ToDoDetailView.swift */; };
+		BADE0EEA2A2245FE000F9317 /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADE0EE92A2245FE000F9317 /* CharacterModel.swift */; };
 		BAF6A6202A15B4F0004F4E14 /* BoardDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF6A61F2A15B4F0004F4E14 /* BoardDataManager.swift */; };
 		BAF6A6222A15B8B4004F4E14 /* BoardInputModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF6A6212A15B8B4004F4E14 /* BoardInputModal.swift */; };
 		BAF6A6242A15BA83004F4E14 /* BoardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF6A6232A15BA83004F4E14 /* BoardModel.swift */; };
@@ -57,6 +58,7 @@
 		BA7980622A18F884009DF732 /* CreateBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBoardView.swift; sourceTree = "<group>"; };
 		BA969B2A2A07F6D200DBD597 /* CreateToDoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateToDoView.swift; sourceTree = "<group>"; };
 		BAA1128C2A1DE8E400F7739C /* ToDoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDetailView.swift; sourceTree = "<group>"; };
+		BADE0EE92A2245FE000F9317 /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
 		BAF6A61F2A15B4F0004F4E14 /* BoardDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardDataManager.swift; sourceTree = "<group>"; };
 		BAF6A6212A15B8B4004F4E14 /* BoardInputModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardInputModal.swift; sourceTree = "<group>"; };
 		BAF6A6232A15BA83004F4E14 /* BoardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardModel.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				863E48EE29E4759B00488280 /* SelectAnswerView.swift */,
 				86DE110F29DFB52E00BA5643 /* WebContentView.swift */,
 				863E48F029E479C100488280 /* CreateCharacterView.swift */,
+				BADE0EE92A2245FE000F9317 /* CharacterModel.swift */,
 			);
 			path = BeforeChar;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAF6A6202A15B4F0004F4E14 /* BoardDataManager.swift in Sources */,
+				BADE0EEA2A2245FE000F9317 /* CharacterModel.swift in Sources */,
 				862077F82A077507003A3E52 /* AfterCharTabControllerView.swift in Sources */,
 				861A4B7E29E06732002C740C /* MainView.swift in Sources */,
 				863E48EB29E46E9800488280 /* IntroView.swift in Sources */,

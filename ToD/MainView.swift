@@ -16,10 +16,10 @@ struct MainView: View {
     var body: some View {
         NavigationView{
 
-            if isChar{
+            if isChar {
                 AfterCharTabControllerView()
 
-            }else{
+            } else {
                 IntroView()
             }
         }

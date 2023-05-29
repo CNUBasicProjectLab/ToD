@@ -41,5 +41,5 @@ struct ToDoModel: Codable, Hashable {
     var deadLine: Date?
     var todo: String
     var todoDetail: String
-    var isComplete: Bool
+    var isComplete: Bool = false
 }
