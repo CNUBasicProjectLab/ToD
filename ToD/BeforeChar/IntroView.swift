@@ -38,7 +38,7 @@ struct IntroView: View {
                     SelectAnswerView()
                         .toolbarRole(.editor)
                 }label:{
-                    Text("투디 생성하기")
+                    Text("시작하기")
                         .font(.headline)
                         .frame(width: 283,height: 60)
                         .foregroundColor(.white)

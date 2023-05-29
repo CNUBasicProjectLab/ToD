@@ -32,7 +32,7 @@ struct ToDoView: View {
                     todoDataManager.toDoList = []
                     isChar = false
                 } label: {
-                    Text("다시 false로")
+                    Text("투디 다시 생성하기")
                 }
                 
             }
@@ -145,6 +145,7 @@ struct ToDoView: View {
 
 struct ToDoListRow: View {
     @State var todo: ToDoModel
+    @State var toDoList: [ToDoModel] = []
     var todoDataManager: ToDoDataManager = ToDoDataManager.shared
     
     var body: some View {
@@ -158,7 +159,7 @@ struct ToDoListRow: View {
                         .multilineTextAlignment(.leading)
                         .foregroundColor(.black)
                         .font(.title3)
-                        .lineLimit(15)
+                        
                     
                     
                     Text(todo.todoDetail)
@@ -175,6 +176,7 @@ struct ToDoListRow: View {
                         var updateTodo = todo
                         updateTodo.isComplete.toggle()
                         todoDataManager.updateToDoItem(updateTodo)
+                        toDoList = todoDataManager.toDoList
                     }
             }
         }
