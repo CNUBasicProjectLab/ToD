@@ -34,14 +34,14 @@ enum characterCategory: String, CaseIterable, Codable {
     
     var displayJobName: String {
         switch self {
-        case .server: return "서버/\n백엔드"
+        case .server: return "서버/백엔드"
         case .frontEnd: return "프론트엔드"
-        case .moblie: return "모바일\n"
-        case .sw: return "SW/\n솔루션"
-        case .security: return "보안\n"
+        case .moblie: return "모바일"
+        case .sw: return "SW/솔루션"
+        case .security: return "보안"
         case .qa: return "QA엔지니어"
-        case .embeded: return "임베디드\n"
-        case .ai: return "인공지능/\n머신러닝"
+        case .embeded: return "임베디드"
+        case .ai: return "인공지능/머신러닝"
         default: return "not selected"
         }
     }
