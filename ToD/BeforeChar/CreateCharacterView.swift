@@ -147,48 +147,48 @@ struct CreateCharacterView: View {
             VStack {
                 switch myJob {
                 case characterCategory.frontEnd.displayJobName:
-                    Image("frontend")
+                    Image("frontend_character")
                         .resizable()
                         .frame(width: 200, height: 200)
                         .padding()
                 case characterCategory.server.displayJobName:
-                    Image("backend")
+                    Image("backend_character")
                         .resizable()
                         .frame(width: 200, height: 200)
                         .padding()
                 case characterCategory.moblie.displayJobName:
-                    Image("mobile")
+                    Image("moblie_character")
                         .resizable()
                         .frame(width: 200, height: 200)
                         .padding()
                 case characterCategory.sw.displayJobName:
-                    Image("sw")
+                    Image("sw_character")
                         .resizable()
                         .frame(width: 200, height: 200)
                         .padding()
                 case characterCategory.security.displayJobName:
-                    Image("security")
+                    Image("security_character")
                         .resizable()
                         .frame(width: 200, height: 200)
                         .padding()
                 case characterCategory.qa.displayJobName:
-                    Image("qa")
+                    Image("qa_character")
                         .resizable()
                         .frame(width: 200, height: 200)
                         .padding()
                 case characterCategory.embeded.displayJobName:
-                    Image("embeded")
+                    Image("embeded_character")
                         .resizable()
                         .frame(width: 200, height: 200)
                         .padding()
                 case characterCategory.ai.displayJobName:
-                    Image("ai")
+                    Image("ai_character")
                         .resizable()
                         .frame(width: 200, height: 200)
                         .padding()
                     
                 default:
-                    Image("default")
+                    Image("default_character")
                         .resizable()
                         .frame(width: 200, height: 200)
                         .padding()
