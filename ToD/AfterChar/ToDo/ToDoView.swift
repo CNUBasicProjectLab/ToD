@@ -29,15 +29,6 @@ struct ToDoView: View {
                     }
                     .padding()
                 }
-                Button {
-                    todoDataManager.toDoList = []
-                    isChar = false
-                } label: {
-                    Text("투디 다시 생성하기")
-                }
-                
-            }
-            .onAppear {
                 
             }
             .toolbar {
@@ -51,13 +42,35 @@ struct ToDoView: View {
                     }
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        self.showModal = true
-                    } label: {
-                        Label("Profile", systemImage: "square.and.pencil")
-                    }
-                    .sheet(isPresented: $showModal) {
-                        CreateToDoView()
+                    HStack{
+                        Button {
+                            todoDataManager.toDoList = []
+                            isChar = false
+                        } label: {
+                            Label("Profile", systemImage: "exclamationmark.circle.fill" )
+                                .foregroundColor(Color.red)
+                        }
+                        
+                        NavigationLink {
+                            BoardView()
+                                .toolbarRole(.editor)
+                        } label: {
+                            Label("Profile", systemImage: "ellipsis.bubble")
+                        }
+
+                        
+                        
+                        Button {
+                            self.showModal = true
+                        } label: {
+                            Label("Profile", systemImage: "square.and.pencil")
+                        }
+                        .sheet(isPresented: $showModal) {
+                            CreateToDoView()
+                        }
+                        
+                        
+                        
                     }
                 }
             }
@@ -68,42 +81,42 @@ struct ToDoView: View {
         VStack {
             switch myJob {
             case characterCategory.frontEnd.displayJobName:
-                Image("frontend_character")
+                Image("default_character")
                     .resizable()
                     .frame(width: 200, height: 200)
                     .padding()
             case characterCategory.server.displayJobName:
-                Image("backend_character")
+                Image("default_character")
                     .resizable()
                     .frame(width: 200, height: 200)
                     .padding()
             case characterCategory.moblie.displayJobName:
-                Image("moblie_character")
+                Image("default_character")
                     .resizable()
                     .frame(width: 200, height: 200)
                     .padding()
             case characterCategory.sw.displayJobName:
-                Image("sw_character")
+                Image("default_character")
                     .resizable()
                     .frame(width: 200, height: 200)
                     .padding()
             case characterCategory.security.displayJobName:
-                Image("security_character")
+                Image("default_character")
                     .resizable()
                     .frame(width: 200, height: 200)
                     .padding()
             case characterCategory.qa.displayJobName:
-                Image("qa_character")
+                Image("default_character")
                     .resizable()
                     .frame(width: 200, height: 200)
                     .padding()
             case characterCategory.embeded.displayJobName:
-                Image("embeded_character")
+                Image("default_character")
                     .resizable()
                     .frame(width: 200, height: 200)
                     .padding()
             case characterCategory.ai.displayJobName:
-                Image("ai_character")
+                Image("default_character")
                     .resizable()
                     .frame(width: 200, height: 200)
                     .padding()
@@ -132,7 +145,7 @@ struct ToDoView: View {
     
     var toDQuest: some View {
         VStack(alignment: .leading) {
-
+            
             ForEach(Array(todoDataManager.getToDoList(jobCategory: myJob).enumerated()), id: \.offset) { idx, data in
                 if (data.toDoType == todoCategory) && (data.isComplete == false) {
                     ToDoListRow(todo: data)
@@ -160,7 +173,7 @@ struct ToDoListRow: View {
                         .multilineTextAlignment(.leading)
                         .foregroundColor(.black)
                         .font(.title3)
-                        
+                    
                     
                     
                     Text(todo.todoDetail)
@@ -190,6 +203,6 @@ struct ToDoListRow: View {
 struct ToDoView_Previews: PreviewProvider {
     static var previews: some View {
         ToDoView()
-//            .previewLayout(.device)
+        //            .previewLayout(.device)
     }
 }
