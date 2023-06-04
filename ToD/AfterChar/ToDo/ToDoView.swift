@@ -51,13 +51,26 @@ struct ToDoView: View {
                     }
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        self.showModal = true
-                    } label: {
-                        Label("Profile", systemImage: "square.and.pencil")
-                    }
-                    .sheet(isPresented: $showModal) {
-                        CreateToDoView()
+                    HStack{
+                        NavigationLink {
+                            BoardView()
+                        } label: {
+                            Label("Profile", systemImage: "ellipsis.bubble")
+                        }
+
+                        
+                        
+                        Button {
+                            self.showModal = true
+                        } label: {
+                            Label("Profile", systemImage: "square.and.pencil")
+                        }
+                        .sheet(isPresented: $showModal) {
+                            CreateToDoView()
+                        }
+                        
+                        
+                        
                     }
                 }
             }
@@ -132,7 +145,7 @@ struct ToDoView: View {
     
     var toDQuest: some View {
         VStack(alignment: .leading) {
-
+            
             ForEach(Array(todoDataManager.getToDoList(jobCategory: myJob).enumerated()), id: \.offset) { idx, data in
                 if (data.toDoType == todoCategory) && (data.isComplete == false) {
                     ToDoListRow(todo: data)
@@ -160,7 +173,7 @@ struct ToDoListRow: View {
                         .multilineTextAlignment(.leading)
                         .foregroundColor(.black)
                         .font(.title3)
-                        
+                    
                     
                     
                     Text(todo.todoDetail)
@@ -190,6 +203,6 @@ struct ToDoListRow: View {
 struct ToDoView_Previews: PreviewProvider {
     static var previews: some View {
         ToDoView()
-//            .previewLayout(.device)
+        //            .previewLayout(.device)
     }
 }

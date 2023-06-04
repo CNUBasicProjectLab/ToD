@@ -17,8 +17,7 @@ struct MainView: View {
         NavigationView{
 
             if isChar {
-                AfterCharTabControllerView()
-
+                ToDoView()
             } else {
                 IntroView()
             }
