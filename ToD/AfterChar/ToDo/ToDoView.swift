@@ -29,15 +29,6 @@ struct ToDoView: View {
                     }
                     .padding()
                 }
-                Button {
-                    todoDataManager.toDoList = []
-                    isChar = false
-                } label: {
-                    Text("투디 다시 생성하기")
-                }
-                
-            }
-            .onAppear {
                 
             }
             .toolbar {
@@ -52,6 +43,14 @@ struct ToDoView: View {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     HStack{
+                        Button {
+                            todoDataManager.toDoList = []
+                            isChar = false
+                        } label: {
+                            Label("Profile", systemImage: "exclamationmark.circle.fill" )
+                                .foregroundColor(Color.red)
+                        }
+                        
                         NavigationLink {
                             BoardView()
                         } label: {
