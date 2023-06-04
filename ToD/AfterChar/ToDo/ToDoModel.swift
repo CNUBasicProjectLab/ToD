@@ -9,13 +9,11 @@ import Foundation
 
 enum Category: String, CaseIterable, Codable {
     case dev
-    case normal
     case tod
     
     var displayCategory: String {
         switch self {
-        case .dev: return "개발"
-        case .normal: return "일반"
+        case .dev: return "목표 적기"
         case .tod: return "투디 퀘스트"
         }
     }
