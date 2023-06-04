@@ -68,42 +68,42 @@ struct ToDoView: View {
         VStack {
             switch myJob {
             case characterCategory.frontEnd.displayJobName:
-                Image("frontend_character")
+                Image("default_character")
                     .resizable()
                     .frame(width: 200, height: 200)
                     .padding()
             case characterCategory.server.displayJobName:
-                Image("backend_character")
+                Image("default_character")
                     .resizable()
                     .frame(width: 200, height: 200)
                     .padding()
             case characterCategory.moblie.displayJobName:
-                Image("moblie_character")
+                Image("default_character")
                     .resizable()
                     .frame(width: 200, height: 200)
                     .padding()
             case characterCategory.sw.displayJobName:
-                Image("sw_character")
+                Image("default_character")
                     .resizable()
                     .frame(width: 200, height: 200)
                     .padding()
             case characterCategory.security.displayJobName:
-                Image("security_character")
+                Image("default_character")
                     .resizable()
                     .frame(width: 200, height: 200)
                     .padding()
             case characterCategory.qa.displayJobName:
-                Image("qa_character")
+                Image("default_character")
                     .resizable()
                     .frame(width: 200, height: 200)
                     .padding()
             case characterCategory.embeded.displayJobName:
-                Image("embeded_character")
+                Image("default_character")
                     .resizable()
                     .frame(width: 200, height: 200)
                     .padding()
             case characterCategory.ai.displayJobName:
-                Image("ai_character")
+                Image("default_character")
                     .resizable()
                     .frame(width: 200, height: 200)
                     .padding()
