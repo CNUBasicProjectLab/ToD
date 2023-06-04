@@ -53,6 +53,7 @@ struct ToDoView: View {
                         
                         NavigationLink {
                             BoardView()
+                                .toolbarRole(.editor)
                         } label: {
                             Label("Profile", systemImage: "ellipsis.bubble")
                         }
