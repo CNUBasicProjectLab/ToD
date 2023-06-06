@@ -166,22 +166,8 @@ struct ToDoListRow: View {
         NavigationLink {
             ToDoDetailView(todo: todo)
         } label: {
-            Divider()
-            HStack {
-                VStack(alignment: .leading) {
-                    Text(todo.todo)
-                        .multilineTextAlignment(.leading)
-                        .foregroundColor(.black)
-                        .font(.title3)
-                    
-                    
-                    
-                    Text(todo.todoDetail)
-                        .multilineTextAlignment(.leading)
-                        .lineLimit(1)
-                        .foregroundColor(.gray)
-                }
-                Spacer()
+//            Divider()
+            HStack(spacing: 20) {
                 Image(systemName: todo.isComplete ? "checkmark.square" : "square")
                     .resizable()
                     .frame(width: 25, height: 25)
@@ -192,6 +178,18 @@ struct ToDoListRow: View {
                         todoDataManager.updateToDoItem(updateTodo)
                         toDoList = todoDataManager.toDoList
                     }
+                VStack(alignment: .leading) {
+                    Text(todo.todo)
+                        .multilineTextAlignment(.leading)
+                        .foregroundColor(.black)
+                        .font(.title3)
+                    Text(todo.todoDetail)
+                        .multilineTextAlignment(.leading)
+                        .lineLimit(1)
+                        .foregroundColor(.gray)
+                }
+                
+                
             }
         }
     }
