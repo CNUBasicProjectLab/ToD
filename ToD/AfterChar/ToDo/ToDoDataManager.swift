@@ -12,6 +12,7 @@ class ToDoDataManager: ObservableObject {
     static let shared = ToDoDataManager()
     
     @Published var toDoList:[ToDoModel] = []
+    @Published var cntComplete: Int = 0
     
     init() {
         if let data = UserDefaults.standard.value(forKey: ToDoDataManager.TODO_DATA_LIST_KEY) as? Data {
@@ -36,6 +37,17 @@ class ToDoDataManager: ObservableObject {
             ToDoModel(keyDate: Date(), toDoType: .tod, todo: "개발 세미나 참여하기", todoDetail: "개발 세미나 참여하기 (중)"),
             ToDoModel(keyDate: Date(), toDoType: .tod, todo: "깃허브 오픈소스 프로젝트 기여", todoDetail: "깃허브 오픈소스 프로젝트 기여 (상)")
         ]
+    }
+    
+    func completedQuestCount() -> Int{
+        let list = toDoList
+        var count: Int = 0
+        for data in list {
+            if data.isComplete {
+                count += 1
+            }
+        }
+        return count
     }
     
     func getToDoList(jobCategory myJob: String) -> [ToDoModel] {

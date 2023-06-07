@@ -15,23 +15,21 @@ struct ToDoView: View {
     @State private var showModal: Bool = false
     @State var todoCategory: Category = .dev
     @Environment(\.refresh) private var refresh
-    
+    @State private var cntComplete: Int = 0
     
     var body: some View {
         NavigationStack {
             VStack {
                 ScrollView{
                     VStack(alignment: .center) {
-                        //                        VStack(){
-                        //                            Text("                                                               ")
-                        //                        }.frame(width: .infinity, height : 10)
-                        //                            .background(Color.white)
-                        //                            .overlay(
-                        //                                RoundedRectangle(cornerRadius: 20)
-                        //                                    .stroke(Color.green, lineWidth: 1.5)
-                        //                            )
-                        toDCharacter
-                        
+                        Text("\(cntComplete)")
+                        if cntComplete == 0 {
+                            initialCharacter
+                        } else if cntComplete == 1 {
+                            intermediateCharacter
+                        } else {
+                            toDCharacter
+                        }
                         
                         Divider()
                         toDPicker
@@ -39,7 +37,6 @@ struct ToDoView: View {
                     }
                     .padding()
                 }
-                
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
@@ -84,6 +81,27 @@ struct ToDoView: View {
                     }
                 }
             }
+            .onAppear {
+                cntComplete = todoDataManager.completedQuestCount()
+            }
+        }
+    }
+    
+    var initialCharacter: some View {
+        VStack {
+            Image("default_character")
+                .resizable()
+                .frame(width: 200, height: 200)
+                .padding()
+        }
+    }
+    
+    var intermediateCharacter: some View {
+        VStack {
+            Image("intermediate_character")
+                .resizable()
+                .frame(width: 200, height: 200)
+                .padding()
         }
     }
     
@@ -166,6 +184,7 @@ struct ToDoView: View {
     }
     
 }
+
 
 struct ToDoListRow: View {
     @State var todo: ToDoModel
