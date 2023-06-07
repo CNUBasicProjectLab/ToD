@@ -87,8 +87,8 @@ class ToDoDataManager: ObservableObject {
         if let data = acData {
             toDoList.insert(data, at: 0)
             
-            UserDefaults.standard.set(try? PropertyListEncoder().encode(toDoList), forKey: ToDoDataManager.TODO_DATA_LIST_KEY)
-            return UserDefaults.standard.synchronize()
+             UserDefaults.standard.set(try? PropertyListEncoder().encode(toDoList), forKey: ToDoDataManager.TODO_DATA_LIST_KEY)
+//            return UserDefaults.standard.synchronize()
         }
         return false
     }
@@ -108,7 +108,7 @@ class ToDoDataManager: ObservableObject {
     
     func saveToDoList() {
         UserDefaults.standard.set(try? PropertyListEncoder().encode(toDoList), forKey: ToDoDataManager.TODO_DATA_LIST_KEY)
-        UserDefaults.standard.synchronize()
+//        UserDefaults.standard.synchronize()
     }
     
 }

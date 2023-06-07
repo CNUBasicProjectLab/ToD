@@ -177,7 +177,7 @@ struct ToDoListRow: View {
                         updateTodo.isComplete.toggle()
                         todoDataManager.updateToDoItem(updateTodo)
                         toDoList = todoDataManager.toDoList
-                    }.padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 8 ))
+                    }.padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 16 ))
                 VStack(alignment: .leading) {
                     Text(todo.todo)
                         .multilineTextAlignment(.leading)
