@@ -57,10 +57,13 @@ class ToDoDataManager: ObservableObject {
             updateToDo()
             return toDoList
         }
-        
+
         let returnToDoList:[ToDoModel] = toDoList
         return returnToDoList
     }
+    
+
+
     
     func getTodData(jobCategory job: String) -> [ToDoModel] {
         var todQuenst: [ToDoModel] = commonQuest()
@@ -105,10 +108,21 @@ class ToDoDataManager: ObservableObject {
         return false
     }
     
+//    func updateToDo() {
+//        let list = toDoList
+//        toDoList = list
+//    }
+    
     func updateToDo() {
-        let list = toDoList
-        toDoList = list
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            var newList = [ToDoModel]()
+            newList.append(contentsOf: self.toDoList)
+            self.toDoList = newList
+        }
     }
+
+
     
     func updateToDoItem(_ todo: ToDoModel) {
         guard let index = toDoList.firstIndex(where: {$0.id == todo.id}) else {

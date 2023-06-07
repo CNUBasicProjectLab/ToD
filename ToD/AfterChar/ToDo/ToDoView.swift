@@ -109,42 +109,42 @@ struct ToDoView: View {
         VStack {
             switch myJob {
             case characterCategory.frontEnd.displayJobName:
-                Image("default_character")
+                Image("frontend_character")
                     .resizable()
                     .frame(width: 200, height: 200)
                     .padding()
             case characterCategory.server.displayJobName:
-                Image("default_character")
+                Image("backend_character")
                     .resizable()
                     .frame(width: 200, height: 200)
                     .padding()
             case characterCategory.moblie.displayJobName:
-                Image("default_character")
+                Image("moblie_character")
                     .resizable()
                     .frame(width: 200, height: 200)
                     .padding()
             case characterCategory.sw.displayJobName:
-                Image("default_character")
+                Image("sw_character")
                     .resizable()
                     .frame(width: 200, height: 200)
                     .padding()
             case characterCategory.security.displayJobName:
-                Image("default_character")
+                Image("security_character")
                     .resizable()
                     .frame(width: 200, height: 200)
                     .padding()
             case characterCategory.qa.displayJobName:
-                Image("default_character")
+                Image("qa_character")
                     .resizable()
                     .frame(width: 200, height: 200)
                     .padding()
             case characterCategory.embeded.displayJobName:
-                Image("default_character")
+                Image("embeded_character")
                     .resizable()
                     .frame(width: 200, height: 200)
                     .padding()
             case characterCategory.ai.displayJobName:
-                Image("default_character")
+                Image("ai_character")
                     .resizable()
                     .frame(width: 200, height: 200)
                     .padding()
@@ -248,37 +248,14 @@ struct ToDoListRow: View {
                     Spacer()
                 }
                 
-            }.frame(width: .infinity , height: 150)
+            }.frame(height: 150)
 //
                 .background(Color.white)
                 .overlay(
                     RoundedRectangle(cornerRadius: 20)
                         .stroke(Color.gray.opacity(0.3), lineWidth: 1.5)
                 )
-            //            HStack() {
-            //                Image(systemName: todo.isComplete ? "checkmark.square" : "square")
-            //                    .resizable()
-            //                    .frame(width: 25, height: 25)
-            //                    .animation(.default, value: todo.isComplete)
-            //                    .onTapGesture {
-            //                        var updateTodo = todo
-            //                        updateTodo.isComplete.toggle()
-            //                        todoDataManager.updateToDoItem(updateTodo)
-            //                        toDoList = todoDataManager.toDoList
-            //                    }.padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 16 ))
-            //                VStack(alignment: .leading) {
-            //                    Text(todo.todo)
-            //                        .multilineTextAlignment(.leading)
-            //                        .foregroundColor(.black)
-            //                        .font(.title3)
-            //                    Text(todo.todoDetail)
-            //                        .multilineTextAlignment(.leading)
-            //                        .lineLimit(1)
-            //                        .foregroundColor(.gray)
-            //                }
-            //                Spacer()
-            //
-            //            }
+            
         }   .padding(EdgeInsets(top: 0, leading: 0, bottom: 16, trailing: 0 ))
     }
     
