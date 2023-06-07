@@ -22,14 +22,14 @@ struct ToDoView: View {
             VStack {
                 ScrollView{
                     VStack(alignment: .center) {
-//                        VStack(){
-//                            Text("                                                               ")
-//                        }.frame(width: .infinity, height : 10)
-//                            .background(Color.white)
-//                            .overlay(
-//                                RoundedRectangle(cornerRadius: 20)
-//                                    .stroke(Color.green, lineWidth: 1.5)
-//                            )
+                        //                        VStack(){
+                        //                            Text("                                                               ")
+                        //                        }.frame(width: .infinity, height : 10)
+                        //                            .background(Color.white)
+                        //                            .overlay(
+                        //                                RoundedRectangle(cornerRadius: 20)
+                        //                                    .stroke(Color.green, lineWidth: 1.5)
+                        //                            )
                         toDCharacter
                         
                         
@@ -230,6 +230,7 @@ struct ToDoListRow: View {
                 }
                 
             }.frame(width: .infinity , height: 150)
+//
                 .background(Color.white)
                 .overlay(
                     RoundedRectangle(cornerRadius: 20)
@@ -259,7 +260,7 @@ struct ToDoListRow: View {
             //                Spacer()
             //
             //            }
-        }
+        }   .padding(EdgeInsets(top: 0, leading: 0, bottom: 16, trailing: 0 ))
     }
     
 }
