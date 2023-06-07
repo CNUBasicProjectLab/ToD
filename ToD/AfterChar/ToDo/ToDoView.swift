@@ -167,7 +167,7 @@ struct ToDoListRow: View {
             ToDoDetailView(todo: todo)
         } label: {
 //            Divider()
-            HStack(spacing: 20) {
+            HStack() {
                 Image(systemName: todo.isComplete ? "checkmark.square" : "square")
                     .resizable()
                     .frame(width: 25, height: 25)
@@ -177,7 +177,7 @@ struct ToDoListRow: View {
                         updateTodo.isComplete.toggle()
                         todoDataManager.updateToDoItem(updateTodo)
                         toDoList = todoDataManager.toDoList
-                    }
+                    }.padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 8 ))
                 VStack(alignment: .leading) {
                     Text(todo.todo)
                         .multilineTextAlignment(.leading)
@@ -188,7 +188,7 @@ struct ToDoListRow: View {
                         .lineLimit(1)
                         .foregroundColor(.gray)
                 }
-                
+                Spacer()
                 
             }
         }
