@@ -22,7 +22,17 @@ struct ToDoView: View {
             VStack {
                 ScrollView{
                     VStack(alignment: .center) {
+//                        VStack(){
+//                            Text("                                                               ")
+//                        }.frame(width: .infinity, height : 10)
+//                            .background(Color.white)
+//                            .overlay(
+//                                RoundedRectangle(cornerRadius: 20)
+//                                    .stroke(Color.green, lineWidth: 1.5)
+//                            )
                         toDCharacter
+                        
+                        
                         Divider()
                         toDPicker
                         toDQuest
@@ -57,7 +67,7 @@ struct ToDoView: View {
                         } label: {
                             Label("Profile", systemImage: "ellipsis.bubble")
                         }
-
+                        
                         
                         
                         Button {
@@ -166,31 +176,89 @@ struct ToDoListRow: View {
         NavigationLink {
             ToDoDetailView(todo: todo)
         } label: {
-//            Divider()
-            HStack() {
-                Image(systemName: todo.isComplete ? "checkmark.square" : "square")
-                    .resizable()
-                    .frame(width: 25, height: 25)
-                    .animation(.default, value: todo.isComplete)
-                    .onTapGesture {
-                        var updateTodo = todo
-                        updateTodo.isComplete.toggle()
-                        todoDataManager.updateToDoItem(updateTodo)
-                        toDoList = todoDataManager.toDoList
-                    }.padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 16 ))
-                VStack(alignment: .leading) {
-                    Text(todo.todo)
-                        .multilineTextAlignment(.leading)
-                        .foregroundColor(.black)
-                        .font(.title3)
-                    Text(todo.todoDetail)
-                        .multilineTextAlignment(.leading)
-                        .lineLimit(1)
-                        .foregroundColor(.gray)
+            VStack(){
+                //                박스
+                HStack{
+                    //                    글 스페이서 주기 위해
+                    VStack(alignment: .leading) {
+                        Text(todo.todo)
+                            .multilineTextAlignment(.leading)
+                            .foregroundColor(.black)
+                            .font(.title3)
+                        Text(todo.todoDetail)
+                            .multilineTextAlignment(.leading)
+                            .lineLimit(1)
+                            .foregroundColor(.gray)
+                        Spacer()
+                        Divider()
+                        HStack(){
+                            //                            경험치
+                            VStack(){
+                                Text("n xp").foregroundColor(Color.green) .font(.system(size: 12))
+                            }.padding(EdgeInsets(top: 3, leading: 8, bottom: 3, trailing: 8 ))
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 20)
+                                        .stroke(Color.green, lineWidth: 2)
+                                )
+                            //                            state
+                            VStack(){
+                                Text("반복").foregroundColor(Color.gray) .font(.system(size: 12))
+                            }.padding(EdgeInsets(top: 3, leading: 8, bottom: 3, trailing: 8 ))
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 20)
+                                        .stroke(Color.gray, lineWidth: 2)
+                                )
+                            Spacer()
+                            Button {
+                                var updateTodo = todo
+                                updateTodo.isComplete.toggle()
+                                todoDataManager.updateToDoItem(updateTodo)
+                                toDoList = todoDataManager.toDoList
+                            } label: {
+                                VStack(){
+                                    Text("완료").foregroundColor(Color.blue)
+                                }.padding(EdgeInsets(top: 3, leading: 8, bottom: 3, trailing: 8 ))
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 20)
+                                            .stroke(Color.blue, lineWidth: 2)
+                                    )
+                            }
+                            
+                        }
+                    }.padding()
+                    Spacer()
                 }
-                Spacer()
                 
-            }
+            }.frame(width: .infinity , height: 150)
+                .background(Color.white)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 20)
+                        .stroke(Color.gray.opacity(0.3), lineWidth: 1.5)
+                )
+            //            HStack() {
+            //                Image(systemName: todo.isComplete ? "checkmark.square" : "square")
+            //                    .resizable()
+            //                    .frame(width: 25, height: 25)
+            //                    .animation(.default, value: todo.isComplete)
+            //                    .onTapGesture {
+            //                        var updateTodo = todo
+            //                        updateTodo.isComplete.toggle()
+            //                        todoDataManager.updateToDoItem(updateTodo)
+            //                        toDoList = todoDataManager.toDoList
+            //                    }.padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 16 ))
+            //                VStack(alignment: .leading) {
+            //                    Text(todo.todo)
+            //                        .multilineTextAlignment(.leading)
+            //                        .foregroundColor(.black)
+            //                        .font(.title3)
+            //                    Text(todo.todoDetail)
+            //                        .multilineTextAlignment(.leading)
+            //                        .lineLimit(1)
+            //                        .foregroundColor(.gray)
+            //                }
+            //                Spacer()
+            //
+            //            }
         }
     }
     
