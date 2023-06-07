@@ -233,7 +233,7 @@ struct ToDoListRow: View {
                 .background(Color.white)
                 .overlay(
                     RoundedRectangle(cornerRadius: 20)
-                        .stroke(Color.blue, lineWidth: 1.5)
+                        .stroke(Color.gray.opacity(0.3), lineWidth: 1.5)
                 )
             //            HStack() {
             //                Image(systemName: todo.isComplete ? "checkmark.square" : "square")
