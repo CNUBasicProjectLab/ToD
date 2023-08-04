@@ -61,6 +61,7 @@ struct CreateToDoView: View {
                 isNotComplete = isNotCompleteContent()
                 if !isNotComplete {
                     let _ = addData()
+                    dataManager.saveToDoList()
                     dissmiss()
                 }
             } label: {

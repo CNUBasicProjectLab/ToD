@@ -34,6 +34,9 @@ struct ToDoView: View {
                         Divider()
                         toDPicker
                         toDQuest
+                            .refreshable {
+                                
+                            }
                     }
                     .padding()
                 }
@@ -75,9 +78,6 @@ struct ToDoView: View {
                         .sheet(isPresented: $showModal) {
                             CreateToDoView()
                         }
-                        
-                        
-                        
                     }
                 }
             }
@@ -249,7 +249,6 @@ struct ToDoListRow: View {
                 }
                 
             }.frame(height: 150)
-//
                 .background(Color.white)
                 .overlay(
                     RoundedRectangle(cornerRadius: 20)
@@ -257,6 +256,7 @@ struct ToDoListRow: View {
                 )
             
         }   .padding(EdgeInsets(top: 0, leading: 0, bottom: 16, trailing: 0 ))
+
     }
     
 }
@@ -266,6 +266,5 @@ struct ToDoListRow: View {
 struct ToDoView_Previews: PreviewProvider {
     static var previews: some View {
         ToDoView()
-        //            .previewLayout(.device)
     }
 }
