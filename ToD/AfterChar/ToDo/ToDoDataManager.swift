@@ -12,6 +12,7 @@ class ToDoDataManager: ObservableObject {
     static let shared = ToDoDataManager()
     
     @Published var toDoList:[ToDoModel] = []
+    @Published var cntComplete: Int = 0
     
     init() {
         if let data = UserDefaults.standard.value(forKey: ToDoDataManager.TODO_DATA_LIST_KEY) as? Data {
@@ -26,7 +27,6 @@ class ToDoDataManager: ObservableObject {
         return [
             ToDoModel(keyDate: Date(), toDoType: .dev, todo: "깃허브 커밋하기", todoDetail: "알고리즘 문제풀고 커밋하기"),
             ToDoModel(keyDate: Date(), toDoType: .dev, todo: "알고리즘 문제풀기", todoDetail: "골드 5 이상 문제 풀기"),
-            ToDoModel(keyDate: Date(), toDoType: .normal, todo: "일기 쓰기", todoDetail: "자기전에 쓰세용"),
             ToDoModel(keyDate: Date(), toDoType: .tod, todo: "투디 퀘스트 no.1", todoDetail: "투디 퀘스트 디테일")
         ]
     }
@@ -39,6 +39,17 @@ class ToDoDataManager: ObservableObject {
         ]
     }
     
+    func completedQuestCount() -> Int{
+        let list = toDoList
+        var count: Int = 0
+        for data in list {
+            if data.isComplete {
+                count += 1
+            }
+        }
+        return count
+    }
+    
     func getToDoList(jobCategory myJob: String) -> [ToDoModel] {
         if toDoList.isEmpty {
 //            return getDummyData()
@@ -46,10 +57,13 @@ class ToDoDataManager: ObservableObject {
             updateToDo()
             return toDoList
         }
-        
+
         let returnToDoList:[ToDoModel] = toDoList
         return returnToDoList
     }
+    
+
+
     
     func getTodData(jobCategory job: String) -> [ToDoModel] {
         var todQuenst: [ToDoModel] = commonQuest()
@@ -88,16 +102,27 @@ class ToDoDataManager: ObservableObject {
         if let data = acData {
             toDoList.insert(data, at: 0)
             
-            UserDefaults.standard.set(try? PropertyListEncoder().encode(toDoList), forKey: ToDoDataManager.TODO_DATA_LIST_KEY)
-            return UserDefaults.standard.synchronize()
+             UserDefaults.standard.set(try? PropertyListEncoder().encode(toDoList), forKey: ToDoDataManager.TODO_DATA_LIST_KEY)
+//            return UserDefaults.standard.synchronize()
         }
         return false
     }
     
+//    func updateToDo() {
+//        let list = toDoList
+//        toDoList = list
+//    }
+    
     func updateToDo() {
-        let list = toDoList
-        toDoList = list
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            var newList = [ToDoModel]()
+            newList.append(contentsOf: self.toDoList)
+            self.toDoList = newList
+        }
     }
+
+
     
     func updateToDoItem(_ todo: ToDoModel) {
         guard let index = toDoList.firstIndex(where: {$0.id == todo.id}) else {
@@ -109,7 +134,7 @@ class ToDoDataManager: ObservableObject {
     
     func saveToDoList() {
         UserDefaults.standard.set(try? PropertyListEncoder().encode(toDoList), forKey: ToDoDataManager.TODO_DATA_LIST_KEY)
-        UserDefaults.standard.synchronize()
+//        UserDefaults.standard.synchronize()
     }
     
 }

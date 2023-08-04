@@ -15,12 +15,12 @@ struct ToDoDetailView: View {
             VStack (alignment: .leading, spacing: 16) {
                 HStack {
                     Text(todo.todo)
-                        .font(.largeTitle)
-                        .fontWeight(.medium)
+                        .font(.title)
+//                        .fontWeight(.medium)
                         .foregroundColor(.black)
                     Spacer()
                     Text("")
-                }
+                }.padding()
                 .overlay(
                     RoundedRectangle(cornerRadius: 7)
                         .stroke(Color.black.opacity(0.2), lineWidth: 2)
